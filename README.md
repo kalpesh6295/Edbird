@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # EdbirdProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.4.
@@ -25,3 +26,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# Edbird
+>>>>>>> 26c16911da84dd3584b1f6204e7c948e37c567e9
