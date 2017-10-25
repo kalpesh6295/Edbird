@@ -1,0 +1,119 @@
+.header-wrapper{
+    border-bottom: 1px solid rgba(177, 141, 141, 0.29);
+    padding: 0px 50px;
+    max-width: none;
+}
+
+.header-wrapper,.flex-items{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    height: 90px;    
+}
+
+.logo-div{
+    order: 1;
+    width: 60px;
+    
+}
+
+.menu-div{
+    margin-left: 50px;
+    flex-grow: 10;
+    order: 2;
+}
+
+.sign-in-div{
+    justify-content: center;
+    order: 3;
+    width: 20%;
+    margin-right: auto;
+    
+}
+
+ /*------------------media screen 480 px --------------------*/
+
+@media only screen and (max-width: 480px){
+    .header-wrapper{
+        padding: 0px 0px;
+    }
+    .header-wrapper,.flex-items{
+        height: 65px;
+        justify-content: center;
+    
+    }
+    .logo-div{
+        order: 2;
+        width: 20%;
+        margin-left: 20%;
+        margin-right: 20%;
+
+    }
+    .menu-div{
+        order: 1;
+        width: 20%;
+        margin-left: 0px;
+    }
+
+}
+
+ /*------------------media screen 1080 px --------------------*/
+
+ @media only screen and (max-width: 1080px){
+    
+    
+}
+
+
+/*--------------------side-menu-----------------*/
+.side-menu{
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    list-style-type: none;
+    box-sizing: border-box;
+    top: 65px;
+    border: 1px solid #DDDDDD;
+    width: 100vw;
+    height:100vh;
+    left: -100vw;
+}
+
+#side-menu-show{
+    animation-name: side-bar;
+    animation-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes side-bar{
+    0%{ }
+   100%{left:0vw;}
+}
+#side-menu-hide{
+    animation-name: side-bar-close;
+    animation-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes side-bar-close{
+    0%{left: 0vw;}
+   100%{left:-100vw;}
+}
+
+
+@media only screen and (min-width: 480px){
+    .side-menu{
+    top: 90px;
+    width: 300px;
+    }
+    
+}
+@media only screen and (min-width: 1080px){
+    .side-menu{
+        display: none;
+    }
+    
+}
