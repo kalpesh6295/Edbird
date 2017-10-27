@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12">
-      <label for="categories">For you</label>
+      
   </div>
 
 <div style="margin:0; " id="category-list" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 nopadding" *ngFor="let category of categories; let i=index">
@@ -8,7 +8,7 @@
     <app-category-item 
     [category]="category"
     [categoryIndex]="i"
-    [routerLink]="[category.name]"
+    [routerLink]="['/categories',category.name]"
      ></app-category-item>
 </div>
 </div>
