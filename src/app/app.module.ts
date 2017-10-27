@@ -18,9 +18,8 @@ import { IndexService } from './body/index/index.service';
 
 
 const appRoutes:Routes=[
-  { path: ':name', component: MyfieldComponent },
-  
-  { path: '', component: IndexComponent },
+  { path: 'categories/:name', component: MyfieldComponent },
+  { path: '', component: BodyComponent },
  
   
 ];
