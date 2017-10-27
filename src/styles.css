@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+body{
+    font-family: 'Merriweather', serif;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
