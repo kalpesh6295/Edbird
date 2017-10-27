@@ -1,4 +1,4 @@
-import { Component, OnInit , Input,Output,EventEmitter} from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,25 +7,6 @@ import { Component, OnInit , Input,Output,EventEmitter} from '@angular/core';
 })
 export class HeaderComponent {
 
-  count= true;  
-  test= "";
-  @Output() counterChange : EventEmitter<string>;
-     constructor(){
-        
-         this.counterChange = new EventEmitter();
-
-     }
-  @Input() 
-     get counter(){
-         return this.test; 
-     }
-     increment(){
-
-       if(this.count) {this.test = "side-menu-show"; this.count=!this.count}
-       else{ this.test="side-menu-hide";this.count=!this.count}
-       this.counterChange.emit(this.test);
-     }
-        
+    
         
   }
-

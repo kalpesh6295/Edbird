@@ -1,3 +1,5 @@
+
+
 .collapsed-menu{ 
     height: 65px;
     width: 100%;
@@ -120,3 +122,57 @@ display: inline;
 
 }
 
+.side-menu{
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    list-style-type: none;
+    box-sizing: border-box;
+    top: 65px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    width: 100vw;
+    height:100vh;
+    left: -100vw;
+}
+
+#side-menu-show{
+    animation-name: side-bar;
+    animation-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes side-bar{
+    0%{ }
+   100%{left:0vw;}
+}
+#side-menu-hide{
+    animation-name: side-bar-close;
+    animation-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes side-bar-close{
+    0%{left: 0vw;}
+   100%{left:-100vw;}
+}
+
+
+@media only screen and (min-width: 480px){
+    .side-menu{
+    top: 90px;
+    width: 300px;
+    }
+    
+}
+@media only screen and (min-width: 1080px){
+    .side-menu{
+        display: none;
+    }
+    .menu-icon,.nav-icon{
+        display: none;
+    }
+}

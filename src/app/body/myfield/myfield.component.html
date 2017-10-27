@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="catalogue">
+      <div class="tabs"
+      (click)="current='catalogue'"
+      [ngClass]='{active:current==="catalogue"}'>
+          Insights
+      </div>
+      <app-catalogue *ngIf="current==='catalogue'"></app-catalogue>
+  </div>
+  <div class="resources">
+      <div class="tabs"     
+          (click)="current='resources'"
+          [ngClass]='{active:current==="resources"}'>
+          Resources
+      </div>
+      <app-resources *ngIf="current==='resources'"></app-resources>    
+  </div>
+</div>
+
+

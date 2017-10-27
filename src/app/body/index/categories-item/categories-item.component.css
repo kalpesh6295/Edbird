@@ -1,0 +1,32 @@
+.item-box{
+    display: block;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    height: 300px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.item-box {
+    height: 250px;
+    position: relative;
+  }
+  
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+.title{
+    text-transform: capitalize;
+    align-self: end;
+    font-family: EngraversGothic BT, serif;
+}
+.category{
+    align-self: end;
+}

@@ -1,21 +1,43 @@
-<div class="collapsed-menu" (click)="increment()">
-        <span  class={{icon}} >
-          <span></span>   
-          <span></span>   
-          <span></span> 
-          <span></span>    
-        </span>
+<div class="menu-wrapper">
+    <ul class="side-menu" id={{side_menu_class}}>
+            
+ <li class="side-menu-group">
+     <div class="h2 side-menu-group-title">
+       <a class="side-menu-item">
+       <span class="side-menu-item-label">{{side_icon_class}}</span></a>
+     </div>
+   </li>
+   <li class="side-menu-group">
+       <div class="h2 side-menu-group-title">
+           <a class="side-menu-item">
+           <span class="side-menu-item-label ">{{side_menu_class}}</span></a>
+         </div>
+   </li>
+   <li class="side-menu-group">
+       <div class="h2 side-menu-group-title">
+           <a class="side-menu-item">
+           <span class="side-menu-item-label ">{{menu_status}}</span></a>
+         </div>
+   </li>
+ </ul>
 
-        <span class="menu-text">{{icon}}</span>
-    
-    <div class="menu-content">
-        <ul>
-            <li>link1</li>
-            <li>link2</li>
-            <li>link3</li>
-            <li>link4</li>
-        </ul>
-    </div>
+<div class="collapsed-menu" (click)="click_status()">
+    <span  class={{menu_icon_class}} >
+      <span></span>   
+      <span></span>   
+      <span></span> 
+      <span></span>    
+    </span>
+
+    <span class="menu-text">{{menu_status}}</span>
+
+<div class="menu-content">
+    <ul>
+        <li>link1</li>
+        <li>link2</li>
+        <li>link3</li>
+        <li>link4</li>
+    </ul>
+</div>
 </div>  
-
-      
+</div>
