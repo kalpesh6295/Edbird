@@ -6,9 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
-import { LogoComponent } from './header/logo/logo.component';
-import { MenuComponent } from './header/menu/menu.component';
-import { SignInComponent } from './header/sign-in/sign-in.component';
 import { IndexComponent } from './body/index/index.component';
 import { CategoriesItemComponent } from './body/index/categories-item/categories-item.component';
 import { MyfieldComponent } from './body/myfield/myfield.component';
@@ -35,9 +32,6 @@ const appRoutes:Routes=[
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    LogoComponent,
-    MenuComponent,
-    SignInComponent,
     IndexComponent,
     CategoriesItemComponent,
     MyfieldComponent,
