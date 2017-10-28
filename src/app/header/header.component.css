@@ -9,6 +9,9 @@
    
     font-family: EngraversGothic BT;
 }
+.edbird-logo{
+    cursor: pointer;
+}
 
 .header-wrapper,.flex-items{
     display: flex;
@@ -32,6 +35,7 @@
 .sign-in-div{
     justify-content: center;
     order: 3;
+    cursor: pointer;
     width: 20%;
     margin-right: auto;
     
