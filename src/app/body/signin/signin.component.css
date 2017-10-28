@@ -4,17 +4,17 @@
     display: flex;
     align-content: center;
     justify-content: center;
-}
+    }
 .wrapper{
     display: flex;
     background-color: whitesmoke;    
     font-family:  EngraversGothic BT, serif;
     padding: 20px;
-    width: 100%;
+    width: 600px;
     height: 50vh;
     align-items: center;
     justify-content: center;
- }
+    }
  form{
      margin: 5px;
      width: 100%;
