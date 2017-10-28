@@ -3,3 +3,6 @@
     src: url(./assets/webFonts/Engravers.ttf);
     src: url(./assets/webFonts/Engravers.woff);
 }
+html{
+    font-family: EnrgraversGothic BT;
+}

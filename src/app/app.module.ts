@@ -15,11 +15,16 @@ import { MyfieldComponent } from './body/myfield/myfield.component';
 import { CatalogueComponent } from './body/myfield/catalogue/catalogue.component';
 import { ResourcesComponent } from './body/myfield/resources/resources.component';
 import { IndexService } from './body/index/index.service';
+import { SigninComponent } from './body/signin/signin.component';
 
 
 const appRoutes:Routes=[
-  { path: 'categories/:name', component: MyfieldComponent },
   { path: '', component: BodyComponent },
+  { path: 'categories', component: MyfieldComponent,children:[
+    { path: ':name/Insights', component: CatalogueComponent},
+    { path: '**/**', component: BodyComponent}
+  ] },
+  { path: 'SignIn', component: SigninComponent } 
  
   
 ];
@@ -37,7 +42,8 @@ const appRoutes:Routes=[
     CategoriesItemComponent,
     MyfieldComponent,
     CatalogueComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
