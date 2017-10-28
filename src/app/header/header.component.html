@@ -1,7 +1,70 @@
-<div class="header-wrapper">
-  
-  <div class="flex-items logo-div" (click)="goToHomePage()"><app-logo></app-logo></div>
-  <div class="flex-items menu-div"> <app-menu></app-menu></div>
-  <div class="flex-items sign-in-div"(click)="goToSignIn()"><app-sign-in></app-sign-in></div>
-  
+<div class="header-wrapper" >
+
+  <div class="flex-items logo-div" >
+    <div class="edbird-logo">
+    <img width="60vw" src="/../../assets/image/logo.svg" (click)="goToHomePage()" class=" img-responsive">
+</div>
+
+  </div>
+
+  <div class="flex-items menu-div"> 
+    
+   <div class="menu-wrapper">
+    <ul class="side-menu" id={{side_menu_class}}>
+            
+ <li class="side-menu-group">
+     <div class=" side-menu-group-title">
+       <a class="side-menu-item">
+       <span class="side-menu-item-label">DESIGNING</span></a>
+     </div>
+   </li>
+   <li class="side-menu-group">
+       <div class=" side-menu-group-title">
+           <a class="side-menu-item">
+           <span class="side-menu-item-label ">TATTO ART</span></a>
+         </div>
+   </li>
+   <li class="side-menu-group">
+       <div class="side-menu-group-title">
+           <a class="side-menu-item">
+           <span class="side-menu-item-label ">PHOTOGRAPHY</span></a>
+         </div>
+   </li>
+
+   <li class="side-menu-group">
+    <div class="side-menu-group-title">
+        <a class="side-menu-item">
+        <span class="side-menu-item-label ">ANIMATION</span></a>
+      </div>
+</li>
+ </ul>
+
+<div class="collapsed-menu" (click)="click_status()">
+    <span  class={{menu_icon_class}} >
+      <span></span>   
+      <span></span>   
+      <span></span> 
+      <span></span>    
+    </span>
+
+    <span class="menu-text">{{menu_status}}</span>
+
+<div class="menu-content">
+    <ul>
+        <li>DESIGNING</li>
+        <li>TATTO ART</li>
+        <li>PHOTOGRAPHY</li>
+        <li>ANIMATION</li>
+        
+    </ul>
+</div>
 </div>  
+</div>
+  </div>
+  <div class="flex-items sign-in-div">
+      <div class="sign-in">
+          <span class="sign-in-text">Sign In</span>
+        </div>
+  </div>
+
+</div>
