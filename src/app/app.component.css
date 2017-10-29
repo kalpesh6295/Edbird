@@ -1,0 +1,123 @@
+
+/*------------MAIN MODAL------------*/
+.modalcontainer{
+    font-family:  EngraversGothic BT, serif;
+    background: #333333;
+    position: fixed;
+    z-index: 1000000;
+    width: 100%;
+    height: 100%;
+    padding: 200px 450px; 
+    }
+    /*-------------MAIN SIGN IN ---------*/
+.mainmodal{
+    background-color: whitesmoke;    
+    font-family:  EngraversGothic BT, serif;
+    padding: 20px;
+    width: 600px;
+    
+    }
+    
+   
+    /*-------------MAIN SIGN IN  FORM ---------*/
+ form{
+     margin: 5px;
+     width: 100%;
+ }
+ #SignIn,#Facebook{    
+    border: none;
+    color: #ffffff;
+    font-family: EngraversGothic BT, serif; 
+    width: 100%;   
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;   
+}
+.btn{
+    padding: 0px;
+    width: 100%;
+}
+#SignIn{
+    background-color: #333;
+}
+#Facebook{
+    background-color:#3B5998;
+}
+#username,#password{
+    color: #333;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 10px;
+    }
+
+    input[type=text]:focus{
+        outline: 1px solid #333333;    
+      }
+      input[type=password]:focus{
+        outline: 1px solid #333333;    
+      }
+    span{
+        text-decoration: underline;
+        float: right;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    .username,.password{
+        font-size: 15px;
+
+    }
+    .hide{
+        display:none;
+    }
+    .show{
+        display:ruby;
+    }
+    .close{
+        font-size: 20px;
+    }
+    .mainform{
+        margin: 20px;
+    }
+    /*------------MAIN MODAL FOR MOBILE VIEW ------------*/
+   
+    
+   
+    
+    @media only screen and (min-width: 767px)and(max-width:414px){
+        .modalcontainer{
+            padding: 0px;
+        }       
+        .mainmodal{
+            width: 100%;
+            padding: 150px;
+            padding-top: 40px;
+            padding-bottom: 10px;
+        }
+        .mainform{
+            margin: 0px;
+        }
+    }
+    @media only screen and (max-width: 414px){
+        .modalcontainer{
+            padding: 0px;
+        }       
+        .mainmodal{
+            width: 100%;
+            height: 100%;   
+            padding: 60px;
+        }
+        .mainform{
+            margin: 0px;
+        }
+    }
+    @media only screen and (max-width:768px){
+        .modalcontainer{
+            padding: 250px;
+        }       
+        .mainmodal{
+            width: 100%;
+        }
+        .mainform{
+            margin: 0px;
+        }
+    }

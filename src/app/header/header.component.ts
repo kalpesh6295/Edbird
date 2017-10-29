@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,8 +8,14 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
     
-    constructor(private router:Router ){}
+    display:boolean = false
+    @Output() dispEvent = new EventEmitter<boolean>();
 
+    constructor(private router:Router ){}
+  dispFunc(){
+    this.display=!this.display
+    this.dispEvent.emit(this.display)
+  }
   goToHomePage(){
       this.router.navigate(['']);
   }

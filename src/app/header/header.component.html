@@ -1,11 +1,10 @@
 <div class="header-wrapper" >
 
-  <div class="flex-items logo-div" >
+  <div class="flex-items logo-div" (click)="goToHomePage()" >
     <div class="edbird-logo">
-    <img width="60vw" src="/../../assets/images/logo.svg" class=" img-responsive">
+    <img width="60vw" src="/../../assets/images/logo.svg"  class=" img-responsive">
 </div>
-
-  </div>
+</div>
 
   <div class="flex-items menu-div"> 
     
@@ -61,10 +60,11 @@
 </div>  
 </div>
   </div>
-  <div class="flex-items sign-in-div">
+  <div class="flex-items sign-in-div"  (click)="dispFunc()" >
       <div class="sign-in">
           <span class="sign-in-text">Sign In</span>
-        </div>
+      </div>
+      
   </div>
-
+  
 </div>

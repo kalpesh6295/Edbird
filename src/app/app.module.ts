@@ -25,8 +25,6 @@ const appRoutes:Routes=[
     { path: '**', component: BodyComponent}
   ] },
   { path: 'SignIn', component: SigninComponent } 
- 
-  
 ];
 
 @NgModule({

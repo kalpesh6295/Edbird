@@ -85,6 +85,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .menu-icon, .nav-icon{ 
     height: 18px;
@@ -170,10 +171,12 @@ li{
        }
        .collapsed-menu:hover .close-text{
         display: none;
+        cursor: pointer;
+        
     }
    .collapsed-menu{
        width: 100%;
-
+        cursor: pointer;
        justify-content: center;
        margin-left: 0px;
    } 
@@ -279,3 +282,4 @@ display: inline;
 }
 
 /*-------------------SIGN IN CODE GOES HERE------------*/
+/*------------------SIGN IN POP-UP BOX------------------*/
