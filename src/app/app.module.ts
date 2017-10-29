@@ -7,19 +7,22 @@ import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './body/index/index.component';
-import { CategoriesItemComponent } from './body/index/categories-item/categories-item.component';
 import { MyfieldComponent } from './body/myfield/myfield.component';
-import { CatalogueComponent } from './body/myfield/catalogue/catalogue.component';
+import { InsightsComponent } from './body/myfield/insights/insights.component';
 import { ResourcesComponent } from './body/myfield/resources/resources.component';
 import { IndexService } from './body/index/index.service';
 import { SigninComponent } from './body/signin/signin.component';
+import { InsightItemComponent } from './body/myfield/insights/insight-item/insight-item.component';
+import { InsightService } from './body/myfield/insights/insights.service';
+import { CategoriesItemComponent } from './body/index/categories-item/categories-item.component';
 
 
 const appRoutes:Routes=[
   { path: '', component: BodyComponent },
-  { path: 'categories', component: MyfieldComponent,children:[
-    { path: ':name/Insights', component: CatalogueComponent},
-    { path: '**/**', component: BodyComponent}
+  { path: 'categories/:name', component: MyfieldComponent,children:[
+    { path: 'Insights', component: InsightsComponent},
+    { path: 'Resources', component: ResourcesComponent},
+    { path: '**', component: BodyComponent}
   ] },
   { path: 'SignIn', component: SigninComponent } 
  
@@ -32,18 +35,19 @@ const appRoutes:Routes=[
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    IndexComponent,
     CategoriesItemComponent,
+    IndexComponent,
     MyfieldComponent,
-    CatalogueComponent,
+    InsightsComponent,
     ResourcesComponent,
-    SigninComponent
+    SigninComponent,
+    InsightItemComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [IndexService],
+  providers: [IndexService,InsightService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

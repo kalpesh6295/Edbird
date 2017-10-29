@@ -1,0 +1,18 @@
+#insight-box{
+    border-bottom: 1px solid #cccccc;
+    padding: 20px 15px;
+}
+#insight-image{
+    margin-top: 15px;
+    width: 100%;
+    /* border: 1px solid black; */
+    height: 150px;
+}
+#channel-image{
+    /* border: 1px solid black; */
+    float: left;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    margin-right: 5px;
+}
