@@ -1,20 +1,21 @@
 <div class="row">
-  <div class="catalogue">
+  <div class="insights">
       <div class="tabs"
-      (click)="current='catalogue'"
-      [ngClass]='{active:current==="catalogue"}'>
+      (click)="current='insights'"  
+      [routerLink]="['Insights']"
+      [ngClass]='{active:current==="insights"}'>
           Insights
       </div>
-      <app-catalogue *ngIf="current==='catalogue'"></app-catalogue>
-  </div>
+    </div>
   <div class="resources">
       <div class="tabs"     
           (click)="current='resources'"          
+          [routerLink]="['Resources']"
           [ngClass]='{active:current==="resources"}'>
           Resources
       </div>
-      <app-resources *ngIf="current==='resources'"></app-resources>    
-  </div>
+    </div>
 </div>
+<router-outlet></router-outlet>
 
 
