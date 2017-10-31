@@ -24,11 +24,10 @@
 
         <div class="social-login-separator">
           <p class="title">OR</p>
-        </div>
-            <button class="btn fb" id="Facebook">Sign In Using Facebook</button>      
-    </div>
-  
-    <div class="close" (click)="display=false" >
+            </div>
+                <button class="btn fb" id="Facebook">Sign In Using Facebook</button>      
+            </div>
+      <div class="close" (click)="display=false" >
       <span></span>
       <span></span>
       
@@ -37,7 +36,6 @@
   </div>
 <div class="main"  >
   <app-header (dispEvent)="SignInPopUp($event)"></app-header>
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
   <app-footer></app-footer>  
 </div>
-

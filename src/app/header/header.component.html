@@ -12,26 +12,26 @@
     <ul class="side-menu" id={{side_menu_class}}>
             
  <li class="side-menu-group">
-     <div class=" side-menu-group-title">
+     <div class=" side-menu-group-title" (click)="goToDesign()">
        <a class="side-menu-item">
        <span class="side-menu-item-label">DESIGNING</span></a>
      </div>
    </li>
-   <li class="side-menu-group">
+   <li class="side-menu-group"  (click)="goToTat()">
        <div class=" side-menu-group-title">
            <a class="side-menu-item">
-           <span class="side-menu-item-label ">TATTO ART</span></a>
+           <span class="side-menu-item-label">TATTOO ART</span></a>
          </div>
    </li>
    <li class="side-menu-group">
-       <div class="side-menu-group-title">
+       <div class="side-menu-group-title" (click)="goToPhotography()">
            <a class="side-menu-item">
-           <span class="side-menu-item-label ">PHOTOGRAPHY</span></a>
+           <span class="side-menu-item-label">PHOTOGRAPHY</span></a>
          </div>
    </li>
 
    <li class="side-menu-group">
-    <div class="side-menu-group-title">
+    <div class="side-menu-group-title"(click)="goToAnimation()">
         <a class="side-menu-item">
         <span class="side-menu-item-label ">ANIMATION</span></a>
       </div>
@@ -50,10 +50,10 @@
 
 <div class="menu-content">
     <ul>
-        <li>DESIGNING</li>
-        <li>TATTO ART</li>
-        <li>PHOTOGRAPHY</li>
-        <li>ANIMATION</li>
+        <li (click)="goToDesign()" >DESIGNING</li>
+        <li (click)="goToTat()" >TATTO0 ART</li>
+        <li (click)="goToPhotography()" >PHOTOGRAPHY</li>
+        <li (click)="goToAnimation()">ANIMATION</li>
         
     </ul>
 </div>

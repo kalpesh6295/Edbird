@@ -22,7 +22,18 @@ export class HeaderComponent {
   goToSignIn(){
     this.router.navigate(['SignIn']);
 }      
-
+goToTat(){
+      this.router.navigate(['categories/Tattoo-artist/Insights']);
+  }
+  goToDesign(){
+    this.router.navigate(['categories/Fashion Designer/Insights']);
+}
+goToPhotography(){
+  this.router.navigate(['categories/Photographer/Insights']);
+}
+goToAnimation(){
+  this.router.navigate(['categories/Animation/Insights']);
+}
   clicked = false;
   side_menu_class = "side-menu-hide";
   menu_icon_class = "menu-icon";
