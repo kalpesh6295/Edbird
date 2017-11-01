@@ -1,7 +1,7 @@
 <div class="header-wrapper" >
 
-  <div class="flex-items logo-div" (click)="goToHomePage()" (click)="clicked=false" >
-    <div class="edbird-logo" (click)="click_logo()">
+  <div class="flex-items logo-div" (click)="goToHomePage()" >
+    <div class="edbird-logo" (click)="click_close()">
     <img width="45vw" src="/../../assets/images/logo.svg"  class=" img-responsive">
 </div>
 </div>
@@ -12,32 +12,32 @@
     <ul class="side-menu" id={{side_menu_class}}>
             
  <li class="side-menu-group">
-     <div class=" side-menu-group-title" (click)="goToDesign()">
+     <div class=" side-menu-group-title" (click)="goToDesign()" (click)="click_close()"> 
        <a class="side-menu-item">
-       <span class="side-menu-item-label">DESIGNING</span></a>
+       <span class="side-menu-item-label">DESIGNING </span></a>
      </div>
    </li>
-   <li class="side-menu-group"  (click)="goToTat()">
+   <li class="side-menu-group"  (click)="goToTat()" (click)="click_close()">
        <div class=" side-menu-group-title">
            <a class="side-menu-item">
            <span class="side-menu-item-label">TATTOO ART</span></a>
          </div>
    </li>
    <li class="side-menu-group">
-       <div class="side-menu-group-title" (click)="goToPhotography()">
+       <div class="side-menu-group-title" (click)="goToPhotography()" (click)="click_close()">
            <a class="side-menu-item">
            <span class="side-menu-item-label">PHOTOGRAPHY</span></a>
          </div>
    </li>
 
    <li class="side-menu-group">
-    <div class="side-menu-group-title"(click)="goToAnimation()">
+    <div class="side-menu-group-title"(click)="goToAnimation()" (click)="click_close()">
         <a class="side-menu-item">
         <span class="side-menu-item-label ">ANIMATION</span></a>
       </div>
     
     <li class="side-menu-group">
-        <div class="side-menu-group-title"(click)="contact_us()">
+        <div class="side-menu-group-title"(click)="contact_us()" (click)="click_close()">
             <a class="side-menu-item">
             <span class="side-menu-item-label ">CONTACT US</span></a>
           </div>
@@ -73,4 +73,15 @@
       
   </div>
   
+</div>
+
+<div class="back_blur" *ngIf="click_contact">
+</div>
+<div class="contact_form_modal" *ngIf="click_contact">
+<div class="contact_form" *ngIf="click_contact">
+    <div class="slider slider_1 " id={{slider_1_class}} (click)="click_slider_1()">{{slider_1_class}} </div>
+    <div class="slider slider_2" id={{slider_2_class}} (click)="click_slider_2()">{{slider_2_class}} </div>
+    <div class="slider slider_3" id={{slider_3_class}} (click)="click_slider_3()"> {{slider_3_class}}</div>
+    <div class="slider slider_4" id={{slider_4_class}} (click)="click_slider_4()">{{slider_4_class}} </div>
+</div>
 </div>

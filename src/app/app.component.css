@@ -32,12 +32,8 @@ div{
     height: 100%;
     left: 0;
     padding: 0 8px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     z-index: 1000001;
-    overflow-x: hidden;
-    overflow-y: auto;
     position: fixed !important;
     top: 0 !important;
     bottom: 0;

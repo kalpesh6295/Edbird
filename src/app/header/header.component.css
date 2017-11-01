@@ -285,3 +285,130 @@ display: inline;
 
 /*-------------------SIGN IN CODE GOES HERE------------*/
 /*------------------SIGN IN POP-UP BOX------------------*/
+/*------------------contact us ----------------*/
+div{
+    display: block;
+}
+.back_blur {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000003;
+    overflow: hidden;
+    position: fixed;
+    background: #333333;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+.contact_form_modal{
+    overflow: hidden;
+    font-family:  EngraversGothic BT, serif;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 1000004;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0;
+   background-color: blue;
+
+}
+.contact_form_modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.contact_form{  
+    width: 100%;
+    height: 40%;
+    font-family:  EngraversGothic BT, serif;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        text-align: left;
+        padding: 0;
+        z-index: 1000005;
+    }
+    .contact_form div{
+        height: 100%;
+        width: 100%;
+
+    }
+    .slider{
+        position: absolute;
+        transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+       
+    }
+  .slider_1{
+   background: black;
+   margin-left: 0px;
+  }
+
+  .slider_2{
+    background: red;
+    margin-left: -100vw
+   }
+   
+   .slider_3{
+    background: green;
+    margin-left: -100vw;
+   }
+   
+   .slider_4{
+    background: yellow;
+    margin-left: -100vw;
+   }
+   
+   #slider_1_show{display: block;
+    margin-left: 0px;
+    z-index: 200000;
+   }
+ 
+   #slider_2_show{
+    display: block;
+       margin-left: 0px;
+       z-index: 200000;
+    }
+    
+    #slider_3_show{
+        display: block;
+        margin-left: 0px;
+        z-index: 200000;
+    }
+    
+    #slider_4_show{
+        display: block;
+        margin-left: 0px;
+        z-index: 200000;
+    }
+    
+    #slider_1_hide{
+        display: none;
+        margin-left: 100vw;
+        z-index: -1;
+       }
+     
+       #slider_2_hide{
+        display: none;
+        margin-left: 100vw;
+        z-index: -1;
+        }
+        
+        #slider_3_hide{
+            display: none;
+        margin-left: 100vw;
+        z-index: -1;
+        }
+        
+        #slider_4_hide{
+            display: none;
+        margin-left: 100vw;
+        z-index: -1;
+        }
+         

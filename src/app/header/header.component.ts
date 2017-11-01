@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
     
-  click_logo(){
+  click_close(){
+    this.clicked=false;
     this.menu_status="menu";
     this.menu_icon_class = "menu-icon";
     this.side_menu_class = "side-menu-hide";
@@ -40,28 +41,58 @@ goToAnimation(){
   this.router.navigate(['categories/Animation/Insights']);
 }
   clicked = false;
-  side_menu_class = "side-menu-hide";
+  side_menu_class = "";
   menu_icon_class = "menu-icon";
   menu_status = "menu";
 
     click_status(){
-      if(this.clicked) {
+      if(!this.clicked) {
         this.menu_status = "close"; 
         this.side_menu_class = "side-menu-show";
         this.menu_icon_class = "nav-icon";
-        this.clicked=false;
+        this.clicked=true;
        }
 
       else{ 
         this.menu_status="menu";
         this.menu_icon_class = "menu-icon";
         this.side_menu_class = "side-menu-hide";
-        this.clicked=true;      
+        this.clicked=false;      
      }
    
      }        
 
-    
-    
+  click_contact=false;
+    contact_us(){
+      if(!this.click_contact){
+        this.click_contact=true;
+
+      }
+
+      else{
+        this.click_contact=false;
+
+      }
+    }  
+    slider_1_class;
+    slider_2_class;
+    slider_3_class;
+    slider_4_class;
+    click_slider_1(){
+      this.slider_1_class="slider_1_hide";
+      this.slider_2_class="slider_2_show";
+      
+  }
+  click_slider_2(){
+    this.slider_2_class="slider_2_hide";
+    this.slider_3_class="slider_3_show";
+}
+click_slider_3(){
+  this.slider_3_class="slider_3_hide";
+  this.slider_4_class="slider_4_show";
+}
+click_slider_4(){
+  this.slider_4_class="slider_4_hide";
+}
         
   }
