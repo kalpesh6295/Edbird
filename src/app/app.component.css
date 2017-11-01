@@ -25,6 +25,7 @@ div{
 
 /*------------MAIN MODAL------------*/
 .modal-container{
+    overflow: hidden;
     font-family:  EngraversGothic BT, serif;
     text-align: center;
     width: 100%;
@@ -217,4 +218,24 @@ background: black;
 
 .close span:nth-child(2){
     transform: rotate(-45deg);
+}
+/* -----------changes for overflow and nav bar ----------*/
+.main{
+    height: 100vh;
+    display: block;
+    overflow-x: hidden;
+}
+
+.main-overflow{
+    overflow: hidden; 
+}
+.app_header{
+    height: 90px;
+    display: block;
+    position: relative;
+}
+@media only screen and (max-width: 480px){
+    .app_header{
+        height: 65px;
+    }
 }

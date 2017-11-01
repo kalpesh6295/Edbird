@@ -8,6 +8,11 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
     
+  click_logo(){
+    this.menu_status="menu";
+    this.menu_icon_class = "menu-icon";
+    this.side_menu_class = "side-menu-hide";
+  }
     display:boolean = false
     @Output() dispEvent = new EventEmitter<boolean>();
 
@@ -44,17 +49,19 @@ goToAnimation(){
         this.menu_status = "close"; 
         this.side_menu_class = "side-menu-show";
         this.menu_icon_class = "nav-icon";
-        this.clicked=!this.clicked;
+        this.clicked=false;
        }
 
       else{ 
         this.menu_status="menu";
         this.menu_icon_class = "menu-icon";
         this.side_menu_class = "side-menu-hide";
-        this.clicked=!this.clicked;      
+        this.clicked=true;      
      }
-             
+   
+     }        
 
-    }
+    
+    
         
   }
