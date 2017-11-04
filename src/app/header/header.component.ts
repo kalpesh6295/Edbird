@@ -14,13 +14,13 @@ export class HeaderComponent {
     this.menu_icon_class = "menu-icon";
     this.side_menu_class = "side-menu-hide";
   }
-    display:boolean = false
+    display:boolean = true;
     @Output() dispEvent = new EventEmitter<boolean>();
 
     constructor(private router:Router ){}
   dispFunc(){
-    this.display=!this.display
-    this.dispEvent.emit(this.display)
+    this.display=true;
+    this.dispEvent.emit(this.display);
   }
   goToHomePage(){
       this.router.navigate(['']);
@@ -74,25 +74,6 @@ goToAnimation(){
 
       }
     }  
-    slider_1_class;
-    slider_2_class;
-    slider_3_class;
-    slider_4_class;
-    click_slider_1(){
-      this.slider_1_class="slider_1_hide";
-      this.slider_2_class="slider_2_show";
-      
-  }
-  click_slider_2(){
-    this.slider_2_class="slider_2_hide";
-    this.slider_3_class="slider_3_show";
-}
-click_slider_3(){
-  this.slider_3_class="slider_3_hide";
-  this.slider_4_class="slider_4_show";
-}
-click_slider_4(){
-  this.slider_4_class="slider_4_hide";
-}
+ 
         
   }

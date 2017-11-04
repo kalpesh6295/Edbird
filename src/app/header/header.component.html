@@ -37,7 +37,7 @@
       </div>
     
     <li class="side-menu-group">
-        <div class="side-menu-group-title"(click)="contact_us()" (click)="click_close()">
+        <div class="side-menu-group-title" (click)="contact_us()" (click)="click_close()">
             <a class="side-menu-item">
             <span class="side-menu-item-label ">CONTACT US</span></a>
           </div>
@@ -57,7 +57,7 @@
 <div class="menu-content">
     <ul>
         <li (click)="goToDesign()" >DESIGNING</li>
-        <li (click)="goToTat()" >TATTO0 ART</li>
+        <li (click)="goToTat()" >TATTOO ART</li>
         <li (click)="goToPhotography()" >PHOTOGRAPHY</li>
         <li (click)="goToAnimation()">ANIMATION</li>
         
@@ -66,7 +66,7 @@
 </div>  
 </div>
   </div>
-  <div class="flex-items sign-in-div"  (click)="dispFunc()" >
+  <div class="flex-items sign-in-div"  (click)="dispFunc()"  (click)="click_close()">
       <div class="sign-in">
           <span class="sign-in-text">Sign In</span>
       </div>
@@ -76,12 +76,50 @@
 </div>
 
 <div class="back_blur" *ngIf="click_contact">
+        <main role="main">
+                <div class="new-request-section">
+                      <h3 class="page-header">
+                         Contact Us
+                      </h3>
+                           
+                  <div class="form">
+                        <div class="requestor_subject" style="margin-bottom:20px">
+                                <label for="requestor_subject">Your name</label>
+                                <input type="text"  id="requestor_subject_input">
+                            </div>
+
+                         <div class="requestor_email_address" >
+                             <label for="requestor_email_address">Your email address</label>
+                             <input type="text" name="requestor_email_address" id="requestor_email_address" style="margin-bottom:20px">
+                             </div>
+                             <div class="requestor_email_address">
+                                    <label for="requestor_email_address">Your Contact number</label>
+                                    <input type="number" name="requestor_email_address" id="requestor_email_address" style="margin-bottom:20px">
+                                    </div>
+                             <div class="requestor_question_about">
+                                    <label for="requestor_question_about ">question about...</label>
+                                    <select style="margin-bottom:20px"> 
+                                        <option>-</option>
+                                        <option>option effect</option>
+                                        <option>option effect</option>
+                                        <option>option effect</option>
+                                        <option>option effect</option>
+                                    </select>
+                                </div>
+                          
+                          <div class="form-field text  required  request_description">
+                             <label for="request_description">Description</label>
+                             <textarea name="request_description" id="request_description" style="margin-bottom:20px"></textarea>
+                             
+                             
+                               <p>Please enter the details of your request. A member of our support staff will respond as soon as possible.</p>
+                             
+                           </div>
+                           
+                      <footer><input type="submit" name="commit" value="Submit" id="commit" (click)="contact_us()"></footer>
+                  </div>
+                 </div>
+             
+             </main>
 </div>
-<div class="contact_form_modal" *ngIf="click_contact">
-<div class="contact_form" *ngIf="click_contact">
-    <div class="slider slider_1 " id={{slider_1_class}} (click)="click_slider_1()">{{slider_1_class}} </div>
-    <div class="slider slider_2" id={{slider_2_class}} (click)="click_slider_2()">{{slider_2_class}} </div>
-    <div class="slider slider_3" id={{slider_3_class}} (click)="click_slider_3()"> {{slider_3_class}}</div>
-    <div class="slider slider_4" id={{slider_4_class}} (click)="click_slider_4()">{{slider_4_class}} </div>
-</div>
-</div>
+
