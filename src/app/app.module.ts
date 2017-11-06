@@ -18,13 +18,16 @@ import { CategoriesItemComponent } from './body/index/categories-item/categories
 
 
 const appRoutes:Routes=[
-  { path: '', component: BodyComponent },
-  { path: 'categories/:name', component: MyfieldComponent,children:[
-    { path: 'Insights', component: InsightsComponent},
-    { path: 'Resources', component: ResourcesComponent},
-    { path: '**', component: BodyComponent}
+  { path: '', component: BodyComponent, children:[
+      { path: '', component: IndexComponent},
+      { path: 'categories/:name', component: MyfieldComponent,children:[
+      { path: 'Insights', component: InsightsComponent},
+      { path: 'Resources', component: ResourcesComponent},
+      { path: '**', component: BodyComponent}
+    ] },
   ] },
-  { path: 'SignIn', component: SigninComponent } 
+  
+  
 ];
 
 @NgModule({
