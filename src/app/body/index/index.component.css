@@ -8,7 +8,15 @@
     font-family: EngraversGothic BT, serif;
  }
  .row{
-     padding-right:15px;
-     padding-left: 15px; 
+    padding-right:15px;
+    padding-left: 15px; 
+   font-family: EngraversGothic BT, serif;
+}
+ @media only screen and (min-width: 1024px){
+ .row{
+     padding-right:150px;
+     padding-left: 150px; 
     font-family: EngraversGothic BT, serif;
+    
+ }
  }
