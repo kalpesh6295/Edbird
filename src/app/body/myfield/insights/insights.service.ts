@@ -5,6 +5,7 @@ export class InsightService {
     private insights:Insight[]=[
         new Insight(
             'HOW TO PREPARE FOR SSC CGL TIER 1',
+            1,
             'imagehere',
             'books list',
             'story list',
@@ -16,6 +17,7 @@ export class InsightService {
             ),
         new Insight(
             'HOW TO PREPARE FOR SSC CGL TIER 1',
+            2,
             'imagehere',
             'books list',
             'story list',
@@ -27,6 +29,7 @@ export class InsightService {
             ),
         new Insight(
             'HOW TO PREPARE FOR SSC CGL TIER 1',
+            3,
             'imagehere',
             'books list',
             'story list',

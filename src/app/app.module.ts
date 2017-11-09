@@ -15,6 +15,7 @@ import { SigninComponent } from './body/signin/signin.component';
 import { InsightItemComponent } from './body/myfield/insights/insight-item/insight-item.component';
 import { InsightService } from './body/myfield/insights/insights.service';
 import { CategoriesItemComponent } from './body/index/categories-item/categories-item.component';
+import { InsideinsightComponent } from './body/myfield/insights/insight-item/insideinsight/insideinsight.component';
 
 
 const appRoutes:Routes=[
@@ -22,9 +23,9 @@ const appRoutes:Routes=[
       { path: '', component: IndexComponent},
       { path: 'categories/:name', component: MyfieldComponent,children:[
       { path: 'Insights', component: InsightsComponent},
-      { path: 'Resources', component: ResourcesComponent},
-      { path: '**', component: BodyComponent}
-    ] },
+      { path: 'Resources', component: ResourcesComponent}
+      ] },
+      { path: 'eminem', component: InsideinsightComponent}
   ] },
   
   
@@ -42,7 +43,8 @@ const appRoutes:Routes=[
     InsightsComponent,
     ResourcesComponent,
     SigninComponent,
-    InsightItemComponent
+    InsightItemComponent,
+    InsideinsightComponent
   ],
   imports: [
     BrowserModule,
