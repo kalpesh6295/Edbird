@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './body/index/index.component';
 import { MyfieldComponent } from './body/myfield/myfield.component';
 import { InsightsComponent } from './body/myfield/insights/insights.component';
-import { ResourcesComponent } from './body/myfield/resources/resources.component';
+import { StoriesComponent } from './body/myfield/stories/stories.component';
 import { IndexService } from './body/index/index.service';
 import { SigninComponent } from './body/signin/signin.component';
 import { InsightItemComponent } from './body/myfield/insights/insight-item/insight-item.component';
@@ -23,9 +23,9 @@ const appRoutes:Routes=[
       { path: '', component: IndexComponent},
       { path: 'categories/:name', component: MyfieldComponent,children:[
       { path: 'Insights', component: InsightsComponent},
-      { path: 'Resources', component: ResourcesComponent}
+      { path: 'Stories', component: StoriesComponent}
       ] },
-      { path: 'eminem', component: InsideinsightComponent}
+      { path: ':books', component: InsideinsightComponent}
   ] },
   
   
@@ -41,7 +41,7 @@ const appRoutes:Routes=[
     IndexComponent,
     MyfieldComponent,
     InsightsComponent,
-    ResourcesComponent,
+    StoriesComponent,
     SigninComponent,
     InsightItemComponent,
     InsideinsightComponent

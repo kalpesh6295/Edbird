@@ -1,6 +1,5 @@
-.mat-tab-body-content {
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: visible;
+@media only screen and (min-width:1025px){
+.row{
+    padding:100px;
 }
-
+}
