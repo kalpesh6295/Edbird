@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import{ Routes,RouterModule } from '@angular/router';
-
+import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
@@ -11,6 +11,7 @@ import { MyfieldComponent } from './body/myfield/myfield.component';
 import { InsightsComponent } from './body/myfield/insights/insights.component';
 import { StoriesComponent } from './body/myfield/stories/stories.component';
 import { IndexService } from './body/index/index.service';
+import{AppService} from './app.service';
 import { SigninComponent } from './body/signin/signin.component';
 import { InsightItemComponent } from './body/myfield/insights/insight-item/insight-item.component';
 import { InsightService } from './body/myfield/insights/insights.service';
@@ -48,9 +49,10 @@ const appRoutes:Routes=[
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [IndexService,InsightService],
+  providers: [IndexService,InsightService, AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
