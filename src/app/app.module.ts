@@ -16,6 +16,7 @@ import { InsightItemComponent } from './body/myfield/insights/insight-item/insig
 import { InsightService } from './body/myfield/insights/insights.service';
 import { CategoriesItemComponent } from './body/index/categories-item/categories-item.component';
 import { InsideinsightComponent } from './body/myfield/insights/insight-item/insideinsight/insideinsight.component';
+import { StoryItemComponent } from './body/myfield/stories/story-item/story-item.component';
 
 
 const appRoutes:Routes=[
@@ -44,7 +45,8 @@ const appRoutes:Routes=[
     StoriesComponent,
     SigninComponent,
     InsightItemComponent,
-    InsideinsightComponent
+    InsideinsightComponent,
+    StoryItemComponent
   ],
   imports: [
     BrowserModule,

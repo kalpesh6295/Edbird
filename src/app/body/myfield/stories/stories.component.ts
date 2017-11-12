@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Insight } from '../insights/insights.model';
-import { InsightService } from '../insights/insights.service';
+import { Story } from '../stories/stories.model';
+import { StoriesService } from '../stories/stories.service';
 
 @Component({
   selector: 'app-stories',
   templateUrl: './stories.component.html',
-  styleUrls: ['./stories.component.css']
+  styleUrls: ['./stories.component.css'],
+  providers:[StoriesService]
 })
 export class StoriesComponent implements OnInit {
 
-  insights:Insight[]=[];
+  stories:Story[]=[];
   constructor(
-    private insightService:InsightService
+    private storyService:StoriesService
   ) { }
 
   ngOnInit() {
-    this.insights=this.insightService.getInsights();
+    this.stories=this.storyService.getstories();
   }
 
 }

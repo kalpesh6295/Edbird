@@ -14,7 +14,7 @@ export class InsideinsightComponent implements OnInit {
   constructor(private insideService:ContentService) { }
 
   ngOnInit() {
-    // this.insideInsigh=this.insideService.content;
+    this.insideInsigh=this.insideService.getcontent();
   }
   
 }
