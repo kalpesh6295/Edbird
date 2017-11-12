@@ -10,11 +10,11 @@ import { ContentService } from './content.service';
   
 })
 export class InsideinsightComponent implements OnInit {
-  insideInsigh:ContentModel[];
+  insideInsights:ContentModel[];
   constructor(private insideService:ContentService) { }
 
   ngOnInit() {
-    this.insideInsigh=this.insideService.getcontent();
+    this.insideInsights=this.insideService.getcontent();
   }
   
 }

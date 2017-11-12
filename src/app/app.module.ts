@@ -18,6 +18,7 @@ import { InsightService } from './body/myfield/insights/insights.service';
 import { CategoriesItemComponent } from './body/index/categories-item/categories-item.component';
 import { InsideinsightComponent } from './body/myfield/insights/insight-item/insideinsight/insideinsight.component';
 import { StoryItemComponent } from './body/myfield/stories/story-item/story-item.component';
+import { AuthorsComponent } from './body/myfield/authors/authors.component';
 
 
 const appRoutes:Routes=[
@@ -27,7 +28,8 @@ const appRoutes:Routes=[
       { path: 'Insights', component: InsightsComponent},
       { path: 'Stories', component: StoriesComponent}
       ] },
-      { path: ':books', component: InsideinsightComponent}
+      { path: ':books', component: InsideinsightComponent},
+      {path: ':tags/:author', component: AuthorsComponent}
   ] },
   
   
@@ -47,7 +49,8 @@ const appRoutes:Routes=[
     SigninComponent,
     InsightItemComponent,
     InsideinsightComponent,
-    StoryItemComponent
+    StoryItemComponent,
+    AuthorsComponent
   ],
   imports: [
     BrowserModule,

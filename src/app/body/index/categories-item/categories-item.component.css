@@ -30,3 +30,7 @@
 .category{
     align-self: end;
 }
+.item-box:hover {
+    box-shadow: 4px 4px 5px #666363;
+    transform: translateX(-2px)
+ }
