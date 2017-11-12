@@ -6,10 +6,10 @@
           <div class="dek-one title-field">
               <span>Sign in for a better experience</span>
           </div>
-      <form class="login-form">
-          <div class="input-wrapper username ">
-             <label for="username">Email Address</label>  
-             <input type="email" id="username" name="username" value="">
+      <form class="login-form" (ngSubmit)="onsignin(f)" #f = "ngForm">
+          <div class="input-wrapper email_address ">
+             <label for="email_address">Email Address</label>  
+             <input type="email" id="email_address" name="email_address" value="" ngModel>
           </div>
 
           <div class="input-wrapper password ">
@@ -17,15 +17,16 @@
                 Forgot?
               </span>
               <label for="password">Password </label>
-              <input type="password" id="password" name="password">
+              <input type="password" id="password" name="password" ngModel>
             </div>
-            <button class="btn sign-in-btn" id="SignIn">Sign in</button>
+            <button class="btn sign-in-btn"  id="SignIn" type="submit" [disabled]="!f.valid">Sign in</button>
+            
         </form>
 
         <div class="social-login-separator">
           <p class="title">OR</p>
             </div>
-                <button class="btn fb" id="Facebook">Sign In Using Facebook</button>      
+                <button class="btn fb" (click)="facebook_login()" id="Facebook">Sign In Using Facebook</button>      
             </div>
       <div class="close" (click)="display=false" >
       <span></span>
