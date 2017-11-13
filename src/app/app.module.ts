@@ -18,8 +18,12 @@ import { InsightService } from './body/myfield/insights/insights.service';
 import { CategoriesItemComponent } from './body/index/categories-item/categories-item.component';
 import { InsideinsightComponent } from './body/myfield/insights/insight-item/insideinsight/insideinsight.component';
 import { StoryItemComponent } from './body/myfield/stories/story-item/story-item.component';
+<<<<<<< HEAD
 import { AuthorsComponent } from './body/myfield/authors/authors.component';
 
+=======
+import {HashLocationStrategy, Location, LocationStrategy} from '@angular/common';
+>>>>>>> c544a04c1b88f71bf6bc64c591066aba692aef92
 
 const appRoutes:Routes=[
   { path: '', component: BodyComponent, children:[
@@ -55,9 +59,9 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes,{useHash:true}),
   ],
-  providers: [IndexService,InsightService, AppService],
+  providers: [IndexService,InsightService, AppService,Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
