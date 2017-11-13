@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import * as firebase from 'firebase';
 import {AppService} from './app.service';
@@ -12,6 +12,7 @@ import {AppService} from './app.service';
 export class AppComponent implements OnInit {
   title = 'app';
   display=false;
+  user_signed_in=false;
   SignInPopUp($event){
     this.display=$event;
   }
@@ -41,6 +42,7 @@ export class AppComponent implements OnInit {
   firebase.auth().onAuthStateChanged(firebaseUser =>{
     if(firebaseUser){
       this.display=false;
+      this.user_signed_in=true;
     }
     else{
 
