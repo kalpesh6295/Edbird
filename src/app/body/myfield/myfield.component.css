@@ -12,9 +12,10 @@
     border-radius: 10px;    
 }
 .active{
-    border-bottom: 2px solid rgb(216, 208, 208);
+    border-bottom: 2px solid rgba(216, 208, 208,0.5);
+    outline: none;
  
 }
 .tabs:hover {
-    background-color: rgb(216, 208, 208);
+    background-color: rgba(216, 208, 208,0.1);
 }
