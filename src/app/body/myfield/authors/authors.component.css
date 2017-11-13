@@ -1,0 +1,32 @@
+.author-container{
+    display: flex;
+    flex-direction: column;
+    
+}
+.author-container > div {
+    border-bottom: 1px solid #333;
+    box-shadow: 1px 1px 5px #888888;
+    margin: 10px;
+}
+.author-about,.author-portfolio{
+    padding:10px;
+}
+.author-image{
+    margin: 1em;
+}
+.author-info img{
+    border-radius: 50%;
+    width: 6em;   
+}
+.author-info{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+}
+.author-info h1,h4,p {
+    margin-bottom: 0.1rem;
+}
+.author-info h1,h4,p{
+    font-size: 1em;
+}

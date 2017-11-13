@@ -18,4 +18,8 @@ export class IndexService {
         new IndexModel('Tattoo-artist','art never comes from happiness.','../../../../assets/images/tattoo_artist.jpg')
 
     ]
+
+    getcategories(){
+        return this.categories.slice();
+      }
 }
