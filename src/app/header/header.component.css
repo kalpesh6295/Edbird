@@ -10,6 +10,8 @@
     z-index: 1;
     background-color: #FFFFFF;
     font-family: EngraversGothic BT;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+
 }
 .edbird-logo{
     cursor: pointer;

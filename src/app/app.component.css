@@ -10,6 +10,9 @@
 div{
     display: block;
 }
+input:focus{
+    outline: .1px solid #333333;
+}
 .background-blur {
     top: 0;
     left: 0;
@@ -107,6 +110,7 @@ div{
 .input-wrapper {
     margin-bottom: 20px;
     margin-top: 0;
+    width: 100%;
 }
 label{
     font-family: EngraversGothic BT, serif;
@@ -161,7 +165,7 @@ border: none;
 border-radius: 0px;
 color: white;
 }
-.sign-in-btn{
+.sign-in-btn,.sign-up-btn{
 background: black;
 }
 .fb{
@@ -181,7 +185,23 @@ background: black;
     color: #333333;
     background: #FFFFFF;
 }
-
+.switch-link_sign_up,.switch-link_sign_in{
+    font-family: EngraversGothic BT, serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: inherit;
+    line-height: 100%;
+    padding-bottom: 2px; 
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+}
+.sign_up_link,.sign_in_link{
+    margin: auto;
+    border-bottom: 1px solid currentColor;  
+    cursor: pointer; 
+}
 /*-------------------close---------------*/
 .close{
     width: 30px;

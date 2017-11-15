@@ -19,9 +19,22 @@ import { CategoriesItemComponent } from './body/index/categories-item/categories
 import { InsideinsightComponent } from './body/myfield/insights/insight-item/insideinsight/insideinsight.component';
 import { StoryItemComponent } from './body/myfield/stories/story-item/story-item.component';
 import { AuthorsComponent } from './body/myfield/authors/authors.component';
-
+import { HttpModule } from '@angular/http';
 import {PathLocationStrategy, Location, LocationStrategy} from '@angular/common';
+import { AngularFireModule } from 'angularfire2';
 
+// New imports to update based on AngularFire2 version 4
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyAqKMSoMIFr6uR2g4qbyv9VOZ0_OAn0Lzk",
+  authDomain: "edbird-56c2c.firebaseapp.com",
+  databaseURL: "https://edbird-56c2c.firebaseio.com",
+  projectId: "edbird-56c2c",
+  storageBucket: "edbird-56c2c.appspot.com",
+  messagingSenderId: "102733498004"
+};
 const appRoutes:Routes=[
   { path: '', component: BodyComponent, children:[
       { path: '', component: IndexComponent},
@@ -56,7 +69,11 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [IndexService,InsightService, AppService,Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
 .row{
     margin: 0px;
     font-family: EngraversGothic BT;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16);
+    height: 65px;
 }
 .tabs{
     margin:2px;
@@ -9,13 +11,16 @@
     padding-left: 5vw;
     cursor: pointer;
     /* border: 1px 1px 0px solid rgb(172, 168, 168); */
-    border-radius: 10px;    
+    border-radius: none;    
 }
 .active{
-    border-bottom: 2px solid rgba(216, 208, 208,0.5);
+    background-color: rgba(216, 208, 208,0.1);
     outline: none;
+    outline-color: white;
+   
  
 }
 .tabs:hover {
     background-color: rgba(216, 208, 208,0.1);
+    outline-color: white;
 }

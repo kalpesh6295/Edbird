@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import { Observable } from 'rxjs/Observable';
+
 import {AppService} from './app.service';
 
 @Component({
@@ -13,6 +15,7 @@ export class AppComponent implements OnInit {
   title = 'app';
   display=false;
   user_signed_in=false;
+  on_sign_in= false;
   SignInPopUp($event){
     this.display=$event;
   }
@@ -21,17 +24,27 @@ export class AppComponent implements OnInit {
       apiKey: "AIzaSyAqKMSoMIFr6uR2g4qbyv9VOZ0_OAn0Lzk",
       authDomain: "edbird-56c2c.firebaseapp.com",
       databaseURL: "https://edbird-56c2c.firebaseio.com",
-      projectId: "edbird-56c2c",
-      storageBucket: "edbird-56c2c.appspot.com",
-      messagingSenderId: "102733498004"
+      
     };
     firebase.initializeApp(config);
   }
+  
   constructor(private appservice: AppService){}
   onsignup(form: NgForm){
-    const email_address = form.value.email_address;
-    const password = form.value.password;
-    this.appservice.signupUser(email_address, password);
+    const sign_up_username = form.value.username;
+    const sign_up_mobile_number = form.value.sign_up_mobile_number;
+    const sign_up_email_address = form.value.sign_up_email_address;
+    const sign_up_password = form.value.sign_up_password;
+    this.appservice.signupUser(sign_up_email_address, sign_up_password,sign_up_username,sign_up_mobile_number);
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+      if(firebaseUser){
+        this.display=false;
+        this.user_signed_in=true;
+      }
+      else{
+        this.display=true;
+      }
+    })
   }
 
   onsignin(form: NgForm){
