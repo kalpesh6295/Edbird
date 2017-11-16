@@ -77,50 +77,49 @@
 </div>
 
 <div class="back_blur" *ngIf="click_contact">
-        <main role="main">
+    <div class="contact_us_form" >
                 <div class="new-request-section">
                       <h3 class="page-header">
                          Contact Us
                       </h3>
                            
-                  <div class="form">
-                        <div class="requestor_subject" style="margin-bottom:20px">
-                                <label for="requestor_subject">Your name</label>
-                                <input type="text"  id="requestor_subject_input">
+                  <form id="contact_form" class="form"(ngSubmit)="on_contact_us(f)" #f = "ngForm" >
+                        <div class="requestor_name" style="margin-bottom:20px">
+                                <label for="requestor_name">Your name</label>
+                                <input type="text" value="" id="requestor_name" name="requestor_name" ngModel required="required" >
                             </div>
 
-                         <div class="requestor_email_address" >
+                         <div class="email_address_div" >
                              <label for="requestor_email_address">Your email address</label>
-                             <input type="text" name="requestor_email_address" id="requestor_email_address" style="margin-bottom:20px">
+                             <input type="email" name="requestor_email_address" id="requestor_email_address" value="" ngModel required="required" style="margin-bottom:20px">
                              </div>
-                             <div class="requestor_email_address">
-                                    <label for="requestor_email_address">Your Contact number</label>
-                                    <input type="number" name="requestor_email_address" id="requestor_email_address" style="margin-bottom:20px">
-                                    </div>
-                             <div class="requestor_question_about">
-                                    <label for="requestor_question_about ">question about...</label>
-                                    <select style="margin-bottom:20px"> 
-                                        <option>-</option>
-                                        <option>option effect</option>
-                                        <option>option effect</option>
-                                        <option>option effect</option>
-                                        <option>option effect</option>
+                             <div class="contact_number_div">
+                                    <label for="requestor_contact_number">Your Contact number</label>
+                                    <input type="number" name="requestor_contact_number" id="requestor_contact_number" style="margin-bottom:20px" value="" ngModel required="required" >
+                             </div>
+                                    
+                             <div class="question_about_div">
+                                    <label for="requestor_question">question about...</label>
+                                    <select id="requestor_question_about" name="requestor_question_about" style="margin-bottom:20px" ngModel required="required" > 
+                                        <option value="career">career</option>
+                                        <option value="counselling" selected="selected" > counselling</option>
+                                        <option value="intern">intern</option>
+                                        <option value="job">job</option>
+                                        <option value="other">other</option>
                                     </select>
                                 </div>
                           
-                          <div class="form-field text  required  request_description">
-                             <label for="request_description">Description</label>
-                             <textarea name="request_description" id="request_description" style="margin-bottom:20px"></textarea>
-                             
-                             
+                          <div class="form-field text  required  request_description_div">
                                <p>Please enter the details of your request. A member of our support staff will respond as soon as possible.</p>
-                             
                            </div>
-                           
-                      <footer><input type="submit" name="commit" value="Submit" id="commit" (click)="contact_us()"></footer>
+                           <div class="contact_us_submit" >
+                      <button type="submit"  class="commit" id="commit" (click)="on_submit_form=false">submit</button>
+                    </div>
+                </form>
                   </div>
-                 </div>
-             
-             </main>
+                 </div>                               
 </div>
-
+<div class="alert" *ngIf="on_submit_form">
+    <p>submitted successfully</p>
+    <button>close</button>
+</div>

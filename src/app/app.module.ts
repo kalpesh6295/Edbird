@@ -12,6 +12,7 @@ import { InsightsComponent } from './body/myfield/insights/insights.component';
 import { StoriesComponent } from './body/myfield/stories/stories.component';
 import { IndexService } from './body/index/index.service';
 import{AppService} from './app.service';
+import{HeaderService} from './header/header.service';
 import { SigninComponent } from './body/signin/signin.component';
 import { InsightItemComponent } from './body/myfield/insights/insight-item/insight-item.component';
 import { InsightService } from './body/myfield/insights/insights.service';
@@ -22,10 +23,11 @@ import { AuthorsComponent } from './body/myfield/authors/authors.component';
 import { HttpModule } from '@angular/http';
 import {PathLocationStrategy, Location, LocationStrategy} from '@angular/common';
 import { AngularFireModule } from 'angularfire2';
-
+import * as firebase from 'firebase';
 // New imports to update based on AngularFire2 version 4
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { InsideStoryComponent } from './body/myfield/stories/story-item/inside-story/inside-story.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAqKMSoMIFr6uR2g4qbyv9VOZ0_OAn0Lzk",
@@ -35,6 +37,7 @@ export const firebaseConfig = {
   storageBucket: "edbird-56c2c.appspot.com",
   messagingSenderId: "102733498004"
 };
+firebase.initializeApp(firebaseConfig);
 const appRoutes:Routes=[
   { path: '', component: BodyComponent, children:[
       { path: '', component: IndexComponent},
@@ -64,7 +67,8 @@ const appRoutes:Routes=[
     InsightItemComponent,
     InsideinsightComponent,
     StoryItemComponent,
-    AuthorsComponent
+    AuthorsComponent,
+    InsideStoryComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +79,7 @@ const appRoutes:Routes=[
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [IndexService,InsightService, AppService,Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
+  providers: [IndexService,HeaderService,InsightService, AppService,Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

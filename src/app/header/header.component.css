@@ -297,11 +297,22 @@ display: inline;
      overflow: scroll;
 }
 
+.alert_back_blur {
+    top: 25%;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    z-index: 10000050;
+   background-color: white;
+   display: block;
+     position: fixed;
+     overflow: scroll;
+}
 /*------------------contact us code ------------------------*/
 div{
     display: block;
 }
-main{
+.contact_us_form{
     width: 60%;
     margin: 0 auto;
     max-width: 500px;
@@ -309,7 +320,7 @@ main{
     font-family: EngraversGothic BT;
 }
 @media only screen and (max-width: 480px){
-    main{
+    .contact_us_form{
         width: 80%;
     }
 }
@@ -322,7 +333,7 @@ main{
 h3 {
     line-height: 1.2em;
 }
-.requestor_subject{
+.requestor_name{
     margin-top: 20px;
     margin-bottom: 20px;
  }
@@ -340,7 +351,7 @@ label:after {
     color: red;
     margin-left: 2px;
 }
-input{
+input,#commit{
     width: 100%;
     padding: 5px 5px;
     margin: 0;
@@ -350,7 +361,7 @@ input{
     
 
 }
-#requestor_subject_input{
+#requestor_name{
     width: 100%;
     padding: 5px 5px;
 }
@@ -374,27 +385,24 @@ select{
     border: 1px solid #DDDDDD;
     border-radius:0px; 
 }
-.form footer {
+.contact_us_submit{
     border-top: 1px solid #EEE;
     margin-top: 20px;
     padding-top: 30px;
-    text-align: right;
+    
     
 }
-input[type=submit]{
+#commit{
+    text-transform: uppercase;
+
+    font-family: EngraversGothic BT;
     font-size: 14px;
     letter-spacing: 2px;
     background-color: #333333;
     color: #FFFFFF;
     padding: 10px 30px;
 }
-input[type=text]:focus{
-    outline: .1px solid #333333;
-}
-input[type=number]:focus{
-    outline: .1px solid #333333;
-}
-textarea:focus{
+input:focus{
     outline: .1px solid #333333;
 }
 select:focus{

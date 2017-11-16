@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import * as firebase from 'firebase/app';
+import * as firebase from 'firebase';
 import { Observable } from 'rxjs/Observable';
 
 import {AppService} from './app.service';
@@ -20,13 +20,7 @@ export class AppComponent implements OnInit {
     this.display=$event;
   }
   ngOnInit(){
-    var config = {
-      apiKey: "AIzaSyAqKMSoMIFr6uR2g4qbyv9VOZ0_OAn0Lzk",
-      authDomain: "edbird-56c2c.firebaseapp.com",
-      databaseURL: "https://edbird-56c2c.firebaseio.com",
-      
-    };
-    firebase.initializeApp(config);
+  
   }
   
   constructor(private appservice: AppService){}

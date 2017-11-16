@@ -1,13 +1,18 @@
-import { Component, Output, EventEmitter} from '@angular/core';
+import { Component, Output, EventEmitter, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
-
+import {NgForm} from '@angular/forms';
+import * as firebase from 'firebase';
+import { Observable } from 'rxjs/Observable';
+import { Http, Response } from '@angular/http';
+import {HeaderService} from './header.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-    
+ // contact_form_submit = false;
+ on_submit_form=false;
   click_close(){
     this.clicked=false;
     this.menu_status="menu";
@@ -17,7 +22,7 @@ export class HeaderComponent {
     display:boolean = true;
     @Output() dispEvent = new EventEmitter<boolean>();
 
-    constructor(private router:Router ){}
+    constructor(private router:Router,private http: Http, private headerservice: HeaderService){}
   dispFunc(){
     this.display=true;
     this.dispEvent.emit(this.display);
@@ -61,19 +66,32 @@ goToAnimation(){
      }
    
      }        
-
+//background_class ="back_blur";
   click_contact=false;
     contact_us(){
       if(!this.click_contact){
         this.click_contact=true;
+     //   this.background_class="back_blur";
 
       }
 
       else{
         this.click_contact=false;
+      //  this.background_class="alert_back_blur";
 
       }
     }  
- 
-        
+  on_contact_us(form: NgForm){
+    const username = form.value.requestor_name;
+    const email_address = form.value.requestor_email_address;
+    const contact_number = form.value.requestor_contact_number;
+    const requestor_query = form.value.requestor_question_about;
+    this.headerservice.ContactUser(email_address, username, contact_number,requestor_query);
+    this.click_contact=false;
+   // this.background_class="alert_back_blur";
+      }
+  
+     // contact_submit(){
+    //    this.contact_form_submit=!this.contact_form_submit;
+    //  }
   }

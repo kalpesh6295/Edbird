@@ -24,12 +24,13 @@
             </div>
             <button class="btn sign-in-btn"  id="SignIn" type="submit" [disabled]="!f.valid">Sign in</button>
             
-      </form>
+      
 
       <div class="social-login-separator">
         <p class="title">OR</p>
       </div>
-      <button class="btn fb" (click)="facebook_login()" id="Facebook">Sign In Using Facebook</button>      
+      <button class="btn fb" (click)="facebook_login()" id="Facebook">Sign In Using Facebook</button>   
+    </form>   
       <p class="switch-link_sign_up input-wrapper">
           <a  class="sign_up_link" (click)="on_sign_in=!on_sign_in"> Don’t have an account? Join now.</a>  
       </p>
