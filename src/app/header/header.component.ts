@@ -83,8 +83,8 @@ goToAnimation(){
     }  
   on_contact_us(form: NgForm){
     const username = form.value.requestor_name;
-    const email_address = form.value.requestor_email_address;
-    const contact_number = form.value.requestor_contact_number;
+    const email_address = form.value.email;
+    const contact_number = form.value.number;
     const requestor_query = form.value.requestor_question_about;
     this.headerservice.ContactUser(email_address, username, contact_number,requestor_query);
     this.click_contact=false;

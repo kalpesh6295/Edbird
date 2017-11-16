@@ -89,20 +89,22 @@
                                 <input type="text" value="" id="requestor_name" name="requestor_name" ngModel required="required" >
                             </div>
 
-                         <div class="email_address_div" >
+                         <div class="email_address_div" style="margin-bottom:20px" >
                              <label for="requestor_email_address">Your email address</label>
-                             <input type="email" name="requestor_email_address" id="requestor_email_address" value="" ngModel required="required" style="margin-bottom:20px">
-                             </div>
-                             <div class="contact_number_div">
+                             <input type="email"  id="requestor_email_address" value="" ngModel name="email" required email #email="ngModel">
+                             <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+                            </div>
+                             <div class="contact_number_div" style="margin-bottom:20px">
                                     <label for="requestor_contact_number">Your Contact number</label>
-                                    <input type="number" name="requestor_contact_number" id="requestor_contact_number" style="margin-bottom:20px" value="" ngModel required="required" >
-                             </div>
+                                    <input  type="number" name="number" id="requestor_contact_number"  value="" ngModel required number #number="ngModel"  >
+                                    <span class="help-block" *ngIf="!number.valid && number.touched">Please enter a valid mobile number!</span>
+                                </div>
                                     
-                             <div class="question_about_div">
+                             <div class="question_about_div" style="margin-bottom:20px">
                                     <label for="requestor_question">question about...</label>
-                                    <select id="requestor_question_about" name="requestor_question_about" style="margin-bottom:20px" ngModel required="required" > 
-                                        <option value="career">career</option>
-                                        <option value="counselling" selected="selected" > counselling</option>
+                                    <select id="requestor_question_about" name="requestor_question_about"  ngModel required="required" > 
+                                        <option value="career" selected="selected">career</option>
+                                        <option value="counselling" > counselling</option>
                                         <option value="intern">intern</option>
                                         <option value="job">job</option>
                                         <option value="other">other</option>
@@ -113,13 +115,20 @@
                                <p>Please enter the details of your request. A member of our support staff will respond as soon as possible.</p>
                            </div>
                            <div class="contact_us_submit" >
-                      <button type="submit"  class="commit" id="commit" (click)="on_submit_form=false">submit</button>
+                      <button type="submit"  class="commit" id="commit" (click)="on_submit_form=true" [disabled]="!f.valid">submit</button>
                     </div>
                 </form>
                   </div>
                  </div>                               
 </div>
-<div class="alert" *ngIf="on_submit_form">
+<div class="alert_background_blur" *ngIf="on_submit_form"></div>
+<div class="alert_background" *ngIf="on_submit_form">
+<div class="alert"  >
+    <div class="alert_dialouge">
     <p>submitted successfully</p>
-    <button>close</button>
+    </div>
+    <div class="alert_buttton">
+    <button id="commit" (click)="on_submit_form=false">close</button>
+    </div>
+</div>
 </div>
