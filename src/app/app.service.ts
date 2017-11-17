@@ -2,13 +2,14 @@ import * as firebase from 'firebase';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import 'rxjs/Rx';
 @Injectable()
 export class AppService {
     token: string;
     userId:string;
     user_signed_in = false;
-   constructor(private http: Http,private router: Router){}
+   constructor(private http: Http,private router: Router, public afs:AngularFirestore){}
     signupUser(email_address: string, password: string,username: string,mobile_number:string){
     firebase.auth().createUserWithEmailAndPassword(email_address, password)
     

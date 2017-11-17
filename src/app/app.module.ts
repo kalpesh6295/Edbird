@@ -20,14 +20,16 @@ import { CategoriesItemComponent } from './body/index/categories-item/categories
 import { InsideinsightComponent } from './body/myfield/insights/insight-item/insideinsight/insideinsight.component';
 import { StoryItemComponent } from './body/myfield/stories/story-item/story-item.component';
 import { AuthorsComponent } from './body/myfield/authors/authors.component';
+import { InsideStoryComponent } from './body/myfield/stories/story-item/inside-story/inside-story.component';
 import { HttpModule } from '@angular/http';
 import {PathLocationStrategy, Location, LocationStrategy} from '@angular/common';
-import { AngularFireModule } from 'angularfire2';
 import * as firebase from 'firebase';
 // New imports to update based on AngularFire2 version 4
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { InsideStoryComponent } from './body/myfield/stories/story-item/inside-story/inside-story.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import {DataService} from './service/data.service'
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAqKMSoMIFr6uR2g4qbyv9VOZ0_OAn0Lzk",
@@ -77,9 +79,10 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [IndexService,HeaderService,InsightService, AppService,Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
+  providers: [IndexService,DataService,HeaderService,InsightService, AppService,Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

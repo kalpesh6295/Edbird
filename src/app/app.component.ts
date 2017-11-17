@@ -2,9 +2,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import * as firebase from 'firebase';
 import { Observable } from 'rxjs/Observable';
-
 import {AppService} from './app.service';
-
+import {DataService} from '../app/service/data.service'
+import {field} from '../app/model/field' 
 @Component({
   selector: 'app-root',
   
@@ -16,14 +16,28 @@ export class AppComponent implements OnInit {
   display=false;
   user_signed_in=false;
   on_sign_in= false;
+  
+
+  // ----------data from firebase------------------//
+  ngOnInit(){
+    this.dataservice.getfields().subscribe(fields =>{
+      //console.log(fields);
+      this.fields = fields;
+    });
+ }
+fields: field[];
+
+
+
+
+
+  //-----------ends here----------------------------//
   SignInPopUp($event){
     this.display=$event;
   }
-  ngOnInit(){
   
-  }
   
-  constructor(private appservice: AppService){}
+  constructor(private appservice: AppService, private dataservice: DataService){}
   onsignup(form: NgForm){
     const sign_up_username = form.value.username;
     const sign_up_mobile_number = form.value.sign_up_mobile_number;
