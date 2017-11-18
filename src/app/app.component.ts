@@ -1,10 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import * as firebase from 'firebase';
 import { Observable } from 'rxjs/Observable';
 import {AppService} from './app.service';
 import {DataService} from '../app/service/data.service'
 import {field} from '../app/model/field' 
+
 @Component({
   selector: 'app-root',
   
@@ -15,17 +16,13 @@ export class AppComponent implements OnInit {
   title = 'app';
   display=false;
   user_signed_in=false;
-  on_sign_in= false;
+  //on_sign_in= false;
   
 
   // ----------data from firebase------------------//
   ngOnInit(){
-    this.dataservice.getfields().subscribe(fields =>{
-      //console.log(fields);
-      this.fields = fields;
-    });
+    
  }
-fields: field[];
 
 
 
@@ -77,10 +74,12 @@ fields: field[];
   
   facebook_login(){
     firebase.auth().signInWithRedirect(this.provider);
+    
     firebase.auth().getRedirectResult().then(function(result) {
       if (result.credential) {
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         var token = result.credential.accessToken;
+
         // ...
       }
       // The signed-in user info.
@@ -96,6 +95,7 @@ fields: field[];
       // ...
     });
 this.display=false;
+this.user_signed_in=true;
   }
 
 }

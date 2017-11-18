@@ -8,7 +8,8 @@ export class DataService {
   fields: Observable<field[]>;
   fieldDoc: AngularFirestoreDocument<field>;
   constructor(public afs: AngularFirestore) { 
-    this.fields = this.afs.collection('professions').valueChanges();
+    this.fields = this.afs.collection('professions', ref => ref.orderBy('name')).valueChanges();
+    
    }
  
   getfields(){

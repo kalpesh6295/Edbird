@@ -68,9 +68,11 @@
 </div>
   </div>
   
-  <div class="flex-items sign-in-div"  (click)="dispFunc()"  (click)="click_close()">
+  <div class="flex-items sign-in-div"    >
       <div class="sign-in">
-          <span class="sign-in-text">Sign In</span>
+          <span class="sign-in-text" (click)="dispFunc()" *ngIf="!is_signed_in" (click)="click_close()">Sign In</span>
+          <span class="sign-in-text" (click)="signout()" *ngIf="is_signed_in" (click)="click_close()">Sign Out</span>
+        
       </div>
       
   </div>

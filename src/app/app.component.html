@@ -79,7 +79,7 @@
   </div>
 <!-- sign in form end here-->
 <div class="main" [ngClass]="{'main-overflow': display==true}" >
-  <app-header class="app_header" (dispEvent)="SignInPopUp($event)"></app-header>
+  <app-header [is_signed_in]="user_signed_in" class="app_header" (dispEvent)="SignInPopUp($event)"></app-header>
   <app-body></app-body>
   <app-footer></app-footer>  
 </div>
