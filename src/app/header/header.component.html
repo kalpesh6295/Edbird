@@ -14,7 +14,7 @@
  <li class="side-menu-group">
      <div class=" side-menu-group-title" (click)="goToDesign()" (click)="click_close()"> 
        <a class="side-menu-item">
-       <span class="side-menu-item-label">DESIGNING </span></a>
+       <span class="side-menu-item-label">INTERIOR DESIGNING </span></a>
      </div>
    </li>
    <li class="side-menu-group"  (click)="goToTat()" (click)="click_close()">
@@ -33,9 +33,15 @@
    <li class="side-menu-group">
     <div class="side-menu-group-title"(click)="goToAnimation()" (click)="click_close()">
         <a class="side-menu-item">
-        <span class="side-menu-item-label ">ANIMATION</span></a>
+        <span class="side-menu-item-label ">ART GALLERY</span></a>
       </div>
-    
+    </li>
+    <li class="side-menu-group">
+        <div class="side-menu-group-title"(click)="goToAnimation()" (click)="click_close()">
+            <a class="side-menu-item">
+            <span class="side-menu-item-label ">WRITER</span></a>
+          </div>
+        </li>
     <li class="side-menu-group">
         <div class="side-menu-group-title" (click)="contact_us()" (click)="click_close()">
             <a class="side-menu-item">
@@ -56,10 +62,11 @@
 
 <div class="menu-content">
     <ul>
-        <li (click)="goToDesign()" >DESIGNING</li>
+        <li (click)="goToDesign()" >INTERIOR DESIGNING</li>
         <li (click)="goToTat()" >TATTOO ART</li>
         <li (click)="goToPhotography()" >PHOTOGRAPHY</li>
-        <li (click)="goToAnimation()">ANIMATION</li>
+        <li (click)="goToAnimation()">WRITER</li>
+        <li (click)="goToAnimation()">ART GALLERY</li>
         <li (click)="contact_us()">CONTACT US</li>
         
     </ul>

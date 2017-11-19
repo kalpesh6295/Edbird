@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Story } from '../stories/stories.model';
 import { StoriesService } from '../stories/stories.service';
+import { DataService } from '../../../service/data.service';
+import { insight, stories } from '../../../model/Field';
 
 @Component({
   selector: 'app-stories',
@@ -9,14 +11,21 @@ import { StoriesService } from '../stories/stories.service';
   providers:[StoriesService]
 })
 export class StoriesComponent implements OnInit {
+  stories: stories[];
 
-  stories:Story[]=[];
+  
   constructor(
-    private storyService:StoriesService
+    // private storyService:StoriesService
+    private dataservice: DataService,
+    
   ) { }
 
   ngOnInit() {
-    this.stories=this.storyService.getstories();
-  }
+    this.dataservice.getstories().subscribe(stories =>{
+      this.stories=stories;
+      console.log(stories);
+    // this.storiehis.storyService.getstories();
+    })
+}
 
 }

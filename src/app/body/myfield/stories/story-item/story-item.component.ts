@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Story } from '../stories.model';
 import { IndexModel } from '../../../index/index.model';
 import { IndexService } from '../../../index/index.service';
-import { Insight } from '../../insights/insights.model';
+
+import { insight, stories } from '../../../../model/Field';
 
 @Component({
   selector: 'story-item',
@@ -11,16 +12,16 @@ import { Insight } from '../../insights/insights.model';
   providers:[IndexService]
 })
 export class StoryItemComponent implements OnInit {
-  @Input() storiesItem:Story;
-  categories:IndexModel[];
-  @Input() insightItem:Insight;
+  @Input() storiesItem:stories;
+  // categories:IndexModel[];
+  // @Input() insightItem:insight;
   
     constructor(
-      private categoryService:IndexService
+      // private categoryService:IndexService
     ) { }
   
     ngOnInit() {
-      this.categories=this.categoryService.getcategories();
+      // this.categories=this.categoryService.getcategories();
     }
 
 

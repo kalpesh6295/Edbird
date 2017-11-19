@@ -1,23 +1,23 @@
 
 <div id="insight-box">
   <div id="catalogue-header">
-    <span><img src="https://lh6.ggpht.com/hH9eIZFXwNkzsy7eNbc_BCXLKrVZ5sgEuJ3As_5ZiTSvEFEn-T-qbAakX_5nJYQD=w170" alt="#" id="channel-image"></span>
-    <span routerLink='/{{insightItem.tags}}/{{insightItem.author}}' style="cursor:pointer" ><strong>TED Fellows</strong></span>
+    <span><img src={{insightItem.content_image}} alt="#" id="channel-image"></span>
+    <span routerLink='/{{insightItem.author_name}}/{{insightItem.author_name}}' style="cursor:pointer" ><strong>{{insightItem.author_name}}</strong></span>
   </div>
   <div>
     <img  src="http://glendoracitynews.com/wp-content/uploads/2016/08/Meteor-Shower-e1470882200534-777x437.jpg" alt="#" id="insight-image">
   </div>
   <div id="media-text">
     <div>
-      <h3>{{insightItem.shortdesc}}</h3>
+      <h3 [innerHTML]=insightItem.content_heading></h3>
     </div>
     <div>
       <p>
-        Citizen-science site Zooniverse is crowdsourcing scientific research and accelerating discovery -- and you can join in.
+        {{insightItem.content_description}}
       </p>
     </div>
     <div id="links">
-      <span><a routerLink='/{{insightItem.books}}' >Continue reading</a></span> . 11 min read
+      <span><a routerLink='/{{insightItem.author_name}}' >Continue reading</a></span> . 11 min read
     </div> 
   </div>
 </div>

@@ -14,3 +14,7 @@ export interface insight{
     content_detail?: string;
     content_heading?: string;
 }
+export interface stories{
+    content_heading?: string;
+    content_image?: string;
+}
