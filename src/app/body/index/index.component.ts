@@ -13,6 +13,7 @@ import {field} from '../../../app/model/field';
 export class IndexComponent implements OnInit {
   //categories:IndexModel[];
   fields: field[];
+  
     constructor(
       //private categoryService:IndexService, 
       private dataservice: DataService
@@ -23,12 +24,14 @@ export class IndexComponent implements OnInit {
     ngOnInit() {
      // this.categories=this.categoryService.categories;
      this.dataservice.getfields().subscribe(fields =>{
-      //console.log(fields);
+      console.log(fields);
       this.fields = fields;
+      
     });
       
     }
     //openCategory(event:any){
      // console.log(event)
   //  }
+ 
 }

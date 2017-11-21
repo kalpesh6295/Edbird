@@ -46,7 +46,7 @@ export class AppService {
         .then(
              response => {
                this.user_signed_in=true;
-                firebase.auth().currentUser.getToken()
+                firebase.auth().currentUser.getIdToken()
                   .then(
                     (token: string) => this.token = token
                   )
@@ -57,7 +57,7 @@ export class AppService {
         )
         }
         getToken() {
-            firebase.auth().currentUser.getToken()
+            firebase.auth().currentUser.getIdToken()
               .then(
                 (token: string) => this.token = token
               )

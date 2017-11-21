@@ -15,7 +15,7 @@ export class DataService {
   storieDoc: AngularFirestoreDocument<stories>;
   constructor(public afs: AngularFirestore) { 
     this.fields = this.afs.collection('professions', ref => ref.orderBy('name')).valueChanges();
-    this.insights=this.afs.collection('tatto art_insights', ref => ref.orderBy('author_name')).valueChanges();
+    
     this.stories=this.afs.collection('stories', ref => ref.orderBy('content_heading')).valueChanges();
     // this.insights=this.afs.collection( 'designing_insights', ref => ref.orderBy('author_name')).valueChanges();
     // this.insights=this.afs.collection( 'photography_insights', ref => ref.orderBy('author_name')).valueChanges();
@@ -26,7 +26,8 @@ export class DataService {
     return this.fields;
   } 
   
-  getinsights(){
+  getinsights(profession_name:string){
+    this.insights=this.afs.collection(profession_name+'_insights', ref => ref.orderBy('author_name')).valueChanges();
       return this.insights;
   } 
   getstories(){

@@ -48,9 +48,19 @@ goToTat(){
 goToPhotography(){
   this.router.navigate(['categories/Photographer/Insights']);
 }
-goToAnimation(){
-  this.router.navigate(['categories/Animation/Insights']);
+goToWriting(){
+  this.router.navigate(['categories/Writing/Insights']);
 }
+goToArtGallery(){
+  this.router.navigate(['categories/ArtGallery/Insights']);
+}
+/*
+goToProfession(){
+  this.router.navigate(['categories/'+profession_name+'/Insights']);
+}
+
+*/
+
   clicked = false;
   side_menu_class = "";
   menu_icon_class = "menu-icon";

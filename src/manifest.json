@@ -1,0 +1,23 @@
+{
+    "short_name": "edbird",
+    "name": "edbird",
+    "start_url": "/",
+
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "icons": [
+        {
+          "src": "/Users/bhawanaparihar/Edbird-project/src/assets/images/logo.svg",
+          "sizes": "45x56",
+          "type": "image/svg"
+        },
+        {
+            "src": "/Users/bhawanaparihar/Edbird-project/src/assets/images/logo.svg",
+            "sizes": "192x192",
+            "type": "image/svg"
+          }
+       
+      ]
+
+}

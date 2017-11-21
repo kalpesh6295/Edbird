@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   title = 'app';
   display=false;
   user_signed_in=false;
-  //on_sign_in= false;
+  on_sign_in= false;
   
 
   // ----------data from firebase------------------//

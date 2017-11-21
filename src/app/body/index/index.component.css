@@ -1,4 +1,4 @@
-#category-list{
+.category-list{
     margin: 0;
     padding: 0;
 }
@@ -11,12 +11,12 @@
     padding-right:15px;
     padding-left: 15px; 
    font-family: EngraversGothic BT, serif;
+   min-height: 90vh;
 }
  @media only screen and (min-width: 1024px){
  .row{
      padding-right:150px;
      padding-left: 150px; 
-    font-family: EngraversGothic BT, serif;
     
  }
   }
