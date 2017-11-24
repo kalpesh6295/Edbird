@@ -18,3 +18,7 @@ export interface stories{
     content_heading?: string;
     content_image?: string;
 }
+export interface content{
+    content_heading?: string;
+    content_detail?: string;
+}

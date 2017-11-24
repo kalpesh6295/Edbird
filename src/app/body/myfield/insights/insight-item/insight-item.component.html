@@ -2,7 +2,7 @@
 <div id="insight-box">
   <div id="catalogue-header">
     <span><img src={{insightItem.content_image}} alt="#" id="channel-image"></span>
-    <span routerLink='/{{insightItem.author_name}}/{{insightItem.author_name}}' style="cursor:pointer" ><strong>{{insightItem.author_name}}</strong></span>
+    <span routerLink='/{{insightItem.author_name}}' style="cursor:pointer" ><strong>{{insightItem.author_name}}</strong></span>
   </div>
   <div>
     <img  src="http://glendoracitynews.com/wp-content/uploads/2016/08/Meteor-Shower-e1470882200534-777x437.jpg" alt="#" id="insight-image">
@@ -17,7 +17,7 @@
       </p>
     </div>
     <div id="links">
-      <span><a routerLink='/{{insightItem.author_name}}' >Continue reading</a></span> . 11 min read
+      <span><a routerLink='/{{insightItem.content_heading}}' >Continue reading</a></span> . 11 min read
     </div> 
   </div>
 </div>

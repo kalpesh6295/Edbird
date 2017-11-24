@@ -40,19 +40,19 @@ export class HeaderComponent {
     this.router.navigate(['SignIn']);
 }      
 goToTat(){
-      this.router.navigate(['categories/Tattoo-artist/Insights']);
+      this.router.navigate(['categories/tattoo art/Insights']);
   }
   goToDesign(){
     this.router.navigate(['categories/Fashion Designer/Insights']);
 }
 goToPhotography(){
-  this.router.navigate(['categories/Photographer/Insights']);
+  this.router.navigate(['categories/photography/Insights']);
 }
 goToWriting(){
-  this.router.navigate(['categories/Writing/Insights']);
+  this.router.navigate(['categories/writing/Insights']);
 }
 goToArtGallery(){
-  this.router.navigate(['categories/ArtGallery/Insights']);
+  this.router.navigate(['categories/art gallery/Insights']);
 }
 /*
 goToProfession(){

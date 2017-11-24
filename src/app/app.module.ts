@@ -48,8 +48,8 @@ const appRoutes:Routes=[
       { path: 'Stories', component: StoriesComponent}
       ] },
       
-      { path: ':books', component: InsideinsightComponent},
-      {path: ':tags/:author', component: AuthorsComponent}
+      { path: ':content_heading', component: InsideinsightComponent},
+      {path: ':author_name', component: AuthorsComponent}
   ] },
   
   
