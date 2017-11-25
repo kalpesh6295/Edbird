@@ -5,12 +5,14 @@ import * as firebase from 'firebase';
 import { Observable } from 'rxjs/Observable';
 import { Http, Response } from '@angular/http';
 import {HeaderService} from './header.service';
+import {DataService} from '../service/data.service';
+import {field} from '../model/field'
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
  // contact_form_submit = false;
  on_submit_form=false;
  @Input() is_signed_in:boolean;
@@ -28,7 +30,7 @@ export class HeaderComponent {
     @Output() dispEvent = new EventEmitter<boolean>();
     //@Output() user_signed_in = new EventEmitter<boolean>();
 
-    constructor(private router:Router,private http: Http, private headerservice: HeaderService){}
+    constructor(private router:Router,private http: Http, private headerservice: HeaderService, private dataservice: DataService){}
   dispFunc(){
     this.display=true;
     this.dispEvent.emit(this.display);
@@ -39,27 +41,20 @@ export class HeaderComponent {
   goToSignIn(){
     this.router.navigate(['SignIn']);
 }      
-goToTat(){
-      this.router.navigate(['categories/tattoo art/Insights']);
-  }
-  goToDesign(){
-    this.router.navigate(['categories/Fashion Designer/Insights']);
+fields:field[];
+ngOnInit(){
+  this.dataservice.getfields().subscribe(fields =>{
+    console.log(fields);
+    this.fields = fields;
+    
+  });
 }
-goToPhotography(){
-  this.router.navigate(['categories/photography/Insights']);
-}
-goToWriting(){
-  this.router.navigate(['categories/writing/Insights']);
-}
-goToArtGallery(){
-  this.router.navigate(['categories/art gallery/Insights']);
-}
-/*
-goToProfession(){
+
+goToProfession(profession_name:string){
   this.router.navigate(['categories/'+profession_name+'/Insights']);
 }
 
-*/
+
 
   clicked = false;
   side_menu_class = "";

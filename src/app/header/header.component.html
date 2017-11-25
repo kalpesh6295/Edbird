@@ -11,37 +11,13 @@
    <div class="menu-wrapper">
     <ul class="side-menu" id={{side_menu_class}}>
             
- <li class="side-menu-group">
-     <div class=" side-menu-group-title" (click)="goToDesign()" (click)="click_close()"> 
+ <li class="side-menu-group" *ngFor="let field of fields; let i=index" >
+     <div class=" side-menu-group-title" (click)="goToProfession(field.name)" (click)="click_close()"> 
        <a class="side-menu-item">
-       <span class="side-menu-item-label">INTERIOR DESIGNING </span></a>
+       <span class="side-menu-item-label">{{field.name}}</span></a>
      </div>
    </li>
-   <li class="side-menu-group"  (click)="goToTat()" (click)="click_close()">
-       <div class=" side-menu-group-title">
-           <a class="side-menu-item">
-           <span class="side-menu-item-label">TATTOO ART</span></a>
-         </div>
-   </li>
-   <li class="side-menu-group">
-       <div class="side-menu-group-title" (click)="goToPhotography()" (click)="click_close()">
-           <a class="side-menu-item">
-           <span class="side-menu-item-label">PHOTOGRAPHY</span></a>
-         </div>
-   </li>
-
-   <li class="side-menu-group">
-    <div class="side-menu-group-title"(click)="goToArtGallery()" (click)="click_close()">
-        <a class="side-menu-item">
-        <span class="side-menu-item-label ">ART GALLERY</span></a>
-      </div>
-    </li>
-    <li class="side-menu-group">
-        <div class="side-menu-group-title"(click)="goToWriting()" (click)="click_close()">
-            <a class="side-menu-item">
-            <span class="side-menu-item-label ">WRITER</span></a>
-          </div>
-        </li>
+   
     <li class="side-menu-group">
         <div class="side-menu-group-title" (click)="contact_us()" (click)="click_close()">
             <a class="side-menu-item">
@@ -62,13 +38,8 @@
 
 <div class="menu-content">
     <ul>
-        <li (click)="goToDesign()" >INTERIOR DESIGNING</li>
-        <li (click)="goToTat()" >TATTOO ART</li>
-        <li (click)="goToPhotography()" >PHOTOGRAPHY</li>
-        <li (click)="goToWriting()">WRITER</li>
-        <li (click)="goToArtGallery()">ART GALLERY</li>
-        <li (click)="contact_us()">CONTACT US</li>
-        
+        <li *ngFor="let field of fields; let i=index" (click)="goToProfession(field.name)">{{field.name}}</li>
+        <li (click)="contact_us()">contact us</li>
     </ul>
 </div>
 </div>  
@@ -127,9 +98,14 @@
                            <div class="contact_us_submit" >
                       <button type="submit"  class="commit" id="commit" (click)="on_submit_form=true" [disabled]="!f.valid">submit</button>
                     </div>
+                   
                 </form>
+                <div class="close" (click)="click_contact=false" >
+                    <span></span>
+                    <span></span>
                   </div>
-                 </div>                               
+                 </div>  
+                                             
 </div>
 <div class="alert_background_blur" *ngIf="on_submit_form"></div>
 <div class="alert_background" *ngIf="on_submit_form">
