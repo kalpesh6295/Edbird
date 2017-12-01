@@ -5,7 +5,7 @@ import { insight } from '../../../model/Field';
 import { DataService } from '../../../service/data.service';
 import { ActivatedRoute } from '@angular/router/src/router_state';
 import { Router } from '@angular/router';
-import { AfterContentChecked, AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
+
 
 @Component({
   selector: 'app-insights',
@@ -13,7 +13,7 @@ import { AfterContentChecked, AfterContentInit } from '@angular/core/src/metadat
   styleUrls: ['./insights.component.css'],
   providers: [InsightService]
 })
-export class InsightsComponent implements OnInit, AfterContentInit {
+export class InsightsComponent implements OnInit{
   fieldname: string;
   alength:number;
   profession:string;
@@ -25,7 +25,18 @@ export class InsightsComponent implements OnInit, AfterContentInit {
     private dataservice: DataService,
     private router: Router
   //  private route : ActivatedRoute
-  ) { 
+  ) { this.router.events.subscribe(() => {
+    // Do whatever in here
+    this.fulllink=decodeURIComponent(this.router.url);
+    this.alength=this.fulllink.length;
+    this.profession=this.fulllink.substring(12,this.alength-9);
+  //console.log(this.profession);
+     this.dataservice.getinsights(this.profession).subscribe(insights =>{
+     
+      this.insights=insights;
+      
+    });
+});
     
   }
 
@@ -35,7 +46,7 @@ export class InsightsComponent implements OnInit, AfterContentInit {
   this.fulllink=decodeURIComponent(this.router.url);
   this.alength=this.fulllink.length;
   this.profession=this.fulllink.substring(12,this.alength-9);
-console.log(this.profession);
+//console.log(this.profession);
    this.dataservice.getinsights(this.profession).subscribe(insights =>{
    
     this.insights=insights;
@@ -43,17 +54,5 @@ console.log(this.profession);
   });
     
   }
-  ngAfterContentInit(){
-    this.fulllink=decodeURIComponent(this.router.url);
-    this.alength=this.fulllink.length;
-    this.profession=this.fulllink.substring(12,this.alength-9);
-  console.log(this.profession);
-    this.dataservice.getinsights(this.profession).subscribe(insights =>{
-      
-      //console.log(fields);
-      this.insights=insights;
-      
-  });
-}
-
+ 
 }

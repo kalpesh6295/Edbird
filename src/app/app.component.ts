@@ -17,8 +17,8 @@ export class AppComponent implements OnInit {
   display=false;
   user_signed_in=false;
   on_sign_in= false;
-  
-
+  on_submit_form=false;
+  msg;
   // ----------data from firebase------------------//
   ngOnInit(){
     
@@ -45,6 +45,8 @@ export class AppComponent implements OnInit {
       if(firebaseUser){
         this.display=false;
         this.user_signed_in=true;
+        this.on_submit_form=true;
+        this.msg= "account successfully created";
       }
       else{
         this.display=true;
@@ -61,6 +63,8 @@ export class AppComponent implements OnInit {
     if(firebaseUser){
       this.display=false;
       this.user_signed_in=true;
+      this.on_submit_form=true;
+      this.msg= "signed in successfully";
     }
     else{
 

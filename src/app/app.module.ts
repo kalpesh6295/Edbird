@@ -46,13 +46,14 @@ const appRoutes:Routes=[
       { path: 'categories/:name', component: MyfieldComponent,children:[
       { path: 'Insights', component: InsightsComponent},
       { path: 'Stories', component: StoriesComponent}
-      ] },
       
+      ] },
+     
       { path: ':content_heading', component: InsideinsightComponent},
       {path: ':author_name', component: AuthorsComponent}
   ] },
   
-  
+ 
 ];
 
 @NgModule({

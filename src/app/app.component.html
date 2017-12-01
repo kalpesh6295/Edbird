@@ -26,6 +26,7 @@
             
       
 
+      
       <div class="social-login-separator">
         <p class="title">OR</p>
       </div>
@@ -76,7 +77,20 @@
       
     </div>    
     </div>
+   
   </div>
+  <div class="alert_background_blur" *ngIf="on_submit_form"></div>
+  <div class="alert_background" *ngIf="on_submit_form">
+  <div class="alert">
+      <div class="alert_dialouge">
+      <p>{{msg}}</p>
+      </div>
+      <div class="alert_buttton">
+      <button id="commit" (click)="on_submit_form=false">close</button>
+      </div>
+  </div>
+  </div>
+  
 <!-- sign in form end here-->
 <div class="main" [ngClass]="{'main-overflow': display==true}" >
   <app-header [is_signed_in]="user_signed_in" class="app_header" (dispEvent)="SignInPopUp($event)"></app-header>

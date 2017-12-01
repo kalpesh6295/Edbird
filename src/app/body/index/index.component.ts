@@ -24,7 +24,7 @@ export class IndexComponent implements OnInit {
     ngOnInit() {
      // this.categories=this.categoryService.categories;
      this.dataservice.getfields().subscribe(fields =>{
-      console.log(fields);
+      //console.log(fields);
       this.fields = fields;
       
     });

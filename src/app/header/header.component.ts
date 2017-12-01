@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
  signout(){
   firebase.auth().signOut();
   this.is_signed_in=false;
+  this.msg="sign out successfully";
  }
   click_close(){
     this.clicked=false;
@@ -44,7 +45,7 @@ export class HeaderComponent implements OnInit {
 fields:field[];
 ngOnInit(){
   this.dataservice.getfields().subscribe(fields =>{
-    console.log(fields);
+  //  console.log(fields);
     this.fields = fields;
     
   });
@@ -76,12 +77,14 @@ goToProfession(profession_name:string){
         this.clicked=false;      
      }
    
-     }        
+     }    
+     msg;    
 //background_class ="back_blur";
   click_contact=false;
     contact_us(){
       if(!this.click_contact){
         this.click_contact=true;
+        this.msg="submitted successfully";
      //   this.background_class="back_blur";
 
       }

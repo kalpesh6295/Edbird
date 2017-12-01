@@ -25,12 +25,26 @@
 h4{
     font-size: 1rem;
 }
-#story-title img{
-  width: 30%;
-}
+
 #story-box{
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 -2px 2px 0 rgba(0,0,0,.12);
     margin-top: 1em;
     margin-left: 5px;
     margin-right: 5px;    
+}
+
+.img-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 250px;
+    height: 100px;
+
+}
+.story-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 10;
+    height: 100px;
+
 }

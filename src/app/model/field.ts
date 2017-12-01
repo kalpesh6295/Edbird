@@ -22,3 +22,9 @@ export interface content{
     content_heading?: string;
     content_detail?: string;
 }
+
+export interface author {
+    author_name?: string;
+    author_image?: string;
+    author_detail?: string;
+}
