@@ -1,8 +1,9 @@
 footer{
     
     background-color: #F7F7F7;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     font-family: EngraversGothic BT;
+
 }
 .contacts{    
     display: flex;

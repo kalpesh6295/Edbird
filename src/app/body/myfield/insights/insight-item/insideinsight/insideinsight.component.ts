@@ -34,7 +34,7 @@ export class InsideinsightComponent implements OnInit {
     this.contents=contents;  
     contents.forEach(content => {
       this.content_detail=content.content_detail;
-     
+     // this.content_detail=$(this.content_detail);
     });
     //this.content_detail=$(this.content_detail);
 

@@ -480,3 +480,31 @@ select:focus{
 .close span:nth-child(2){
     transform: rotate(-45deg);
 }
+
+.contact_button_div{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    text-align: center;
+    z-index: 1234;
+    padding: 0 2px;
+    font-family:  EngraversGothic BT, serif;
+    position: fixed;
+    bottom: 0;
+ }
+ #contact_button,#contact_button:active,#contact_button:hover,#commit:focus{
+ outline: none;
+ }
+ 
+ #contact_button{
+     width: 100%;
+     border: 10px solid white;
+     border-radius: 0;
+ text-transform: uppercase;
+ font-family: EngraversGothic BT;
+ font-size: 14px;
+ letter-spacing: 2px;
+ background-color: black;
+ color: #FFFFFF;
+ padding: 10px 30px;
+ }

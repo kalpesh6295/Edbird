@@ -20,3 +20,15 @@
     display: inline-block;
     margin-right: 5px;
 }
+#catalogue-header{
+    display: flex;
+    align-items: center;
+}
+h3{
+    font-size: 1.5em;
+}
+*{
+    font-family: Flama, Helvetica, sans-serif;
+     
+
+}
