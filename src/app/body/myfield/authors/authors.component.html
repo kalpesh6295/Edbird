@@ -1,1 +1,5 @@
-<span>you are annoying</span>
+<div *ngFor = "let author of authors">
+<p>{{author.profession}}</p>
+<P>{{author.name}}</P>
+<p><a href={{author.facebook}}>facebook</a></p>
+</div>

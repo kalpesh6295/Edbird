@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { InsightService } from './insights.service';
 import { Insight } from './insights.model';
 import { insight } from '../../../model/Field';
@@ -30,12 +30,13 @@ export class InsightsComponent implements OnInit{
     this.fulllink=decodeURIComponent(this.router.url);
     this.alength=this.fulllink.length;
     this.profession=this.fulllink.substring(12,this.alength-9);
-  //console.log(this.profession);
-     this.dataservice.getinsights(this.profession).subscribe(insights =>{
-     
-      this.insights=insights;
+    this.profession=this.profession.replace(/_/g,' ');if(this.fulllink.substring(this.alength-8,this.alength)=="Insights"){
+      this.dataservice.getinsights(this.profession).subscribe(insights =>{
       
-    });
+       this.insights=insights;
+       console.log(insights);
+     });
+   }
 });
     
   }
@@ -46,12 +47,14 @@ export class InsightsComponent implements OnInit{
   this.fulllink=decodeURIComponent(this.router.url);
   this.alength=this.fulllink.length;
   this.profession=this.fulllink.substring(12,this.alength-9);
-//console.log(this.profession);
+  this.profession=this.profession.replace(/_/g,' ');
+if(this.fulllink.substring(this.alength-8,this.alength)=="Insights"){
    this.dataservice.getinsights(this.profession).subscribe(insights =>{
    
     this.insights=insights;
-    
+    console.log(insights);
   });
+}
     
   }
  

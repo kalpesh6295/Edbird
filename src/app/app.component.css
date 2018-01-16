@@ -316,3 +316,59 @@ background: black;
     color: #FFFFFF;
     padding: 10px 30px;
 }
+
+.landing_display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+    
+}
+.landing_page {
+    width: 100vw;
+    background-image: url('../assets/images/designing.jpg');
+    background-size: contain;
+    background-position: 50% 0%;
+    height: 101vh;
+    
+}
+.landing_option {
+ display: block;
+ color: rgb(0, 0, 0);
+}
+
+.option {
+    display: flex;
+   align-items: center;
+   justify-content: center;
+    font-family: EngraversGothic BT;
+    font-size: 24px;
+    text-decoration: underline;
+}
+@media only screen and (max-width: 480px) {
+   
+    .option{
+        font-size: 16px;
+    }
+    .landing_page {
+        background-position: 20% 20%;
+         
+        
+    }
+   
+}
+
+.landing_show{ 
+    display: block;
+    transition: display 2s;
+}
+
+.landing_hide{
+    display: none;
+    transition: display 2s;
+}
+.landing_display{
+    display: flex;
+}

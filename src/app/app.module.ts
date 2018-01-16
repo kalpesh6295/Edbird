@@ -29,7 +29,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import {DataService} from './service/data.service'
+import {DataService} from './service/data.service';
+import { TransformPipe } from './transform.pipe'
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAqKMSoMIFr6uR2g4qbyv9VOZ0_OAn0Lzk",
@@ -48,9 +49,9 @@ const appRoutes:Routes=[
       { path: 'Stories', component: StoriesComponent}
       
       ] },
-     
-      { path: ':content_heading', component: InsideinsightComponent},
-      {path: ':author_name', component: AuthorsComponent}
+      {path: 'professionals/:author_name', component: AuthorsComponent},
+      { path: ':content_heading', component: InsideinsightComponent}
+      
   ] },
   
  
@@ -72,7 +73,8 @@ const appRoutes:Routes=[
     InsideinsightComponent,
     StoryItemComponent,
     AuthorsComponent,
-    InsideStoryComponent
+    InsideStoryComponent,
+    TransformPipe
   ],
   imports: [
     BrowserModule,

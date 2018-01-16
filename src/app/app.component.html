@@ -1,99 +1,107 @@
+<div [ngClass]="{'landing_show': landing==false, 'landing_hide': landing==true}">
 <!-- sign in form-->
 <div class="background-blur" *ngIf="display"></div>
-<div class="modal-container" [ngClass]="{'show': display==true,'hide':display==false}" >
-<div class="main-modal"> 
+<div class="modal-container" [ngClass]="{'show': display==true,'hide':display==false}">
+    <div class="main-modal">
 
-  <div class="auth-form">
+        <div class="auth-form">
 
-    <div *ngIf="!on_sign_in" class="sign-in-form-container">
-      <div class="dek-one title-field">
-        <span>Sign in for a better experience</span>
-      </div>
-      <form class="login-form" (ngSubmit)="onsignin(f)" #f = "ngForm">
-        <div class="input-wrapper email_address ">
-             <label for="email_address">Email Address</label>  
-             <input type="email" id="email_address" name="email_address" value="" ngModel required="required">
-          </div>
+            <div *ngIf="!on_sign_in" class="sign-in-form-container">
+                <div class="dek-one title-field">
+                    <span>Sign in for a better experience</span>
+                </div>
+                <form class="login-form" (ngSubmit)="onsignin(f)" #f="ngForm">
+                    <div class="input-wrapper email_address ">
+                        <label for="email_address">Email Address</label>
+                        <input type="email" id="email_address" name="email_address" value="" ngModel required="required">
+                    </div>
 
-          <div class="input-wrapper password ">
-              <span class="forgot-password">
+                    <div class="input-wrapper password ">
+                        <span class="forgot-password">
                 Forgot?
               </span>
-              <label for="password">Password </label>
-              <input type="password" id="password" name="password" ngModel required="required">
+                        <label for="password">Password </label>
+                        <input type="password" id="password" name="password" ngModel required="required">
+                    </div>
+                    <button class="btn sign-in-btn" id="SignIn" type="submit" [disabled]="!f.valid">Sign in</button>
+
+                    <div class="social-login-separator">
+                        <p class="title">OR</p>
+                    </div>
+                    <button class="btn fb" (click)="facebook_login()" id="Facebook">Sign In Using Facebook</button>
+                </form>
+                <p class="switch-link_sign_up input-wrapper">
+                    <a class="sign_up_link" (click)="on_sign_in=!on_sign_in"> Don’t have an account? Join now.</a>
+                </p>
+
             </div>
-            <button class="btn sign-in-btn"  id="SignIn" type="submit" [disabled]="!f.valid">Sign in</button>
-            
-      
 
-      
-      <div class="social-login-separator">
-        <p class="title">OR</p>
-      </div>
-      <button class="btn fb" (click)="facebook_login()" id="Facebook">Sign In Using Facebook</button>   
-    </form>   
-      <p class="switch-link_sign_up input-wrapper">
-          <a  class="sign_up_link" (click)="on_sign_in=!on_sign_in"> Don’t have an account? Join now.</a>  
-      </p>
-   
+            <div class="sign-up-form-container" *ngIf="on_sign_in">
+                <form class="signup_form" (ngSubmit)="onsignup(f)" #f="ngForm">
+
+                    <div class="input-wrapper username ">
+                        <label for="sign_up_username">username</label>
+                        <input type="text" id="sign_up_username" name="sign_up_username" value="" ngModel required="required">
+                    </div>
+
+                    <div class="input-wrapper email_address ">
+                        <label for="sign_up_email_address">Email Address</label>
+                        <input type="email" id="sign_up_email_address" name="sign_up_email_address" value="" ngModel required="required">
+                    </div>
+
+                    <div class="input-wrapper mobile_number ">
+                        <label for="sign_up_mobile_number">mobile no.</label>
+                        <input type="number" id="sign_up_mobile_number" name="sign_up_mobile_number" value="" ngModel required="required">
+                    </div>
+
+                    <div class="input-wrapper password ">
+                        <label for="sign_up_password">Password </label>
+                        <input type="password" id="sign_up_password" name="sign_up_password" ngModel required="required">
+                    </div>
+
+                    <button class="btn sign-up-btn" id="SignUp" type="submit" [disabled]="!f.valid">Sign up</button>
+                </form>
+                <p class="switch-link_sign_in">
+                    <a class="sign_in_link" (click)="on_sign_in=!on_sign_in"> already have an account? sign in</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="close" (click)="display=false" (click)="on_sign_in=false">
+            <span></span>
+            <span></span>
+
+        </div>
     </div>
 
-      
-    <div class="sign-up-form-container" *ngIf="on_sign_in">
-      <form class="signup_form" (ngSubmit)="onsignup(f)" #f = "ngForm">
-        
-        <div class="input-wrapper username ">
-          <label for="sign_up_username">username</label>  
-          <input type="text" id="sign_up_username" name="sign_up_username" value="" ngModel required="required">
+</div>
+<div class="alert_background_blur" *ngIf="on_submit_form"></div>
+<div class="alert_background" *ngIf="on_submit_form">
+    <div class="alert">
+        <div class="alert_dialouge">
+            <p>{{msg}}</p>
         </div>
-
-        <div class="input-wrapper email_address ">
-          <label for="sign_up_email_address">Email Address</label>  
-          <input type="email" id="sign_up_email_address" name="sign_up_email_address" value="" ngModel required="required">
+        <div class="alert_buttton">
+            <button id="commit" (click)="on_submit_form=false">close</button>
         </div>
-            
-        <div class="input-wrapper mobile_number ">
-          <label for="sign_up_mobile_number">mobile no.</label>  
-          <input type="number" id="sign_up_mobile_number" name="sign_up_mobile_number" value="" ngModel required="required">
-        </div>
-       
-        <div class="input-wrapper password ">
-         <label for="sign_up_password">Password </label>
-         <input type="password" id="sign_up_password" name="sign_up_password" ngModel required="required">
-        </div>
-
-        <button class="btn sign-up-btn"  id="SignUp" type="submit" [disabled]="!f.valid">Sign up</button>
-      </form>
-      <p class="switch-link_sign_in">
-      <a class="sign_in_link" (click)="on_sign_in=!on_sign_in"> already have an account? sign in</a>  
-      </p>
     </div>
-  </div>
-   
-  
-      <div class="close" (click)="display=false" (click)="on_sign_in=false" >
-      <span></span>
-      <span></span>
-      
-    </div>    
-    </div>
-   
-  </div>
-  <div class="alert_background_blur" *ngIf="on_submit_form"></div>
-  <div class="alert_background" *ngIf="on_submit_form">
-  <div class="alert">
-      <div class="alert_dialouge">
-      <p>{{msg}}</p>
-      </div>
-      <div class="alert_buttton">
-      <button id="commit" (click)="on_submit_form=false">close</button>
-      </div>
-  </div>
-  </div>
-  
+</div>
+
 <!-- sign in form end here-->
-<div class="main" [ngClass]="{'main-overflow': display==true}" >
-  <app-header [is_signed_in]="user_signed_in" class="app_header" (dispEvent)="SignInPopUp($event)"></app-header>
-  <app-body></app-body>
-  <app-footer></app-footer>  
+<div class="main" [ngClass]="{'main-overflow': display==true}">
+    <app-header [is_signed_in]="user_signed_in" [click_contact]="contact_us_click" class="app_header" (dispEvent)="SignInPopUp($event)"></app-header>
+    <app-body></app-body>
+    <app-footer></app-footer>
+</div>
+
+</div>
+<div class="landing_page"  [ngClass]="{'landing_show': landing==true, 'landing_hide': landing==false}">
+    <div  class="landing_display">
+     
+    <!-- <img src="../assets/images/designing.jpg" alt="landing image" class=" img-responsive"> -->
+    <div  class="landing_option img-responsive">
+            <div class="option" (click)="landing=false">Discover your passion</div>
+            <div class="option" (click)="contact_us_click=true" (click)="landing=false">Contact EdBird to know more</div>
+        </div>       
+    </div>
 </div>

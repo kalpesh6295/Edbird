@@ -4,6 +4,7 @@ import { ContentService } from './content.service';
 import { insight } from '../../../../../model/Field';
 import { DataService } from '../../../../../service/data.service';
 import { Router } from '@angular/router';
+
 import { content } from '../../../../../model/Field';
 import * as $ from 'jquery';
 @Component({
@@ -26,8 +27,10 @@ export class InsideinsightComponent implements OnInit {
 
   ngOnInit() {
     this.fulllink=decodeURIComponent(this.router.url);
+
     this.fulllink=this.fulllink.substring(1,this.fulllink.length);
-  // console.log(this.fulllink);
+    this.fulllink=this.fulllink.replace(/_/g,' ');
+   console.log(this.fulllink);
   this.dataservice.getcontent(this.fulllink).subscribe(contents =>{
     
    // console.log(contents);
@@ -38,7 +41,7 @@ export class InsideinsightComponent implements OnInit {
     });
     //this.content_detail=$(this.content_detail);
 
-    console.log(this.content_detail);
+   // console.log(this.content_detail);
 });
 
 

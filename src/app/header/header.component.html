@@ -1,126 +1,125 @@
-<div class="header-wrapper" >
-
-  <div class="flex-items logo-div" (click)="goToHomePage()" >
-    <div class="edbird-logo" (click)="click_close()">
-    <img width="45vw" src="/../../assets/images/logo.svg"  class=" img-responsive">
-</div>
-</div>
-
-  <div class="flex-items menu-div"> 
+<div class="header-wrapper">
     
-   <div class="menu-wrapper">
-    <ul class="side-menu" id={{side_menu_class}}>
-            
- <li class="side-menu-group" *ngFor="let field of fields; let i=index" >
-     <div class=" side-menu-group-title" (click)="goToProfession(field.name)" (click)="click_close()"> 
-       <a class="side-menu-item">
-       <span class="side-menu-item-label">{{field.name}}</span></a>
-     </div>
-   </li>
-   
-    <li class="side-menu-group">
-        <div class="side-menu-group-title" (click)="contact_us()" (click)="click_close()">
-            <a class="side-menu-item">
-            <span class="side-menu-item-label ">CONTACT US</span></a>
-          </div>
-</li>
- </ul>
-
-<div class="collapsed-menu" (click)="click_status()">
-    <span  class={{menu_icon_class}} >
-      <span></span>   
-      <span></span>   
-      <span></span> 
-      <span></span>    
-    </span>
-
-    <span class="menu-text">{{menu_status}}</span>
-
-<div class="menu-content">
-    <ul>
-        <li *ngFor="let field of fields; let i=index" (click)="goToProfession(field.name)">{{field.name}}</li>
-        <li (click)="contact_us()">contact us</li>
-    </ul>
-</div>
-</div>  
-</div>
-  </div>
-  
-  <div class="flex-items sign-in-div"    >
-      <div class="sign-in">
-          <span class="sign-in-text" (click)="dispFunc()" *ngIf="!is_signed_in" (click)="click_close()">Sign In</span>
-          <span class="sign-in-text" (click)="signout()" *ngIf="is_signed_in" (click)="on_submit_form=true" (click)="click_close()">Sign Out</span>
-        
-      </div>
-      
-  </div>
-  
-</div>
-
-<div class="back_blur" *ngIf="click_contact">
-    <div class="contact_us_form" >
-                <div class="new-request-section">
-                      <h3 class="page-header">
-                         Contact Us
-                      </h3>
-                           
-                  <form id="contact_form" class="form"(ngSubmit)="on_contact_us(f)" #f = "ngForm" >
-                        <div class="requestor_name" style="margin-bottom:20px">
-                                <label for="requestor_name">Your name</label>
-                                <input type="text" value="" id="requestor_name" name="requestor_name" ngModel required="required" >
-                            </div>
-
-                         <div class="email_address_div" style="margin-bottom:20px" >
-                             <label for="requestor_email_address">Your email address</label>
-                             <input type="email"  id="requestor_email_address" value="" ngModel name="email" required email #email="ngModel">
-                             <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
-                            </div>
-                             <div class="contact_number_div" style="margin-bottom:20px">
-                                    <label for="requestor_contact_number">Your Contact number</label>
-                                    <input  type="number" name="number" id="requestor_contact_number"  value="" ngModel required number #number="ngModel"  >
-                                    <span class="help-block" *ngIf="!number.valid && number.touched">Please enter a valid mobile number!</span>
-                                </div>
-                                    
-                             <div class="question_about_div" style="margin-bottom:20px">
-                                    <label for="requestor_question">question about...</label>
-                                    <select id="requestor_question_about" name="requestor_question_about"  ngModel required="required" > 
-                                        <option value="career" selected="selected">career</option>
-                                        <option value="counselling" > counselling</option>
-                                        <option value="intern">intern</option>
-                                        <option value="job">job</option>
-                                        <option value="other">other</option>
-                                    </select>
-                                </div>
-                          
-                          <div class="form-field text  required  request_description_div">
-                               <p>Please enter the details of your request. A member of our support staff will respond as soon as possible.</p>
-                           </div>
-                           <div class="contact_us_submit" >
-                      <button type="submit"  class="commit" id="commit" (click)="on_submit_form=true" [disabled]="!f.valid">submit</button>
+        <div class="flex-items logo-div" (click)="goToHomePage()">
+            <div class="edbird-logo" (click)="click_close()">
+                <img width="45vw" src="/../../assets/images/logo.svg" alt="EdBird" class=" img-responsive">
+            </div>
+        </div>
+    
+        <div class="flex-items menu-div">
+    
+            <div class="menu-wrapper">
+                <ul class="side-menu" id={{side_menu_class}}>
+    
+                    <li class="side-menu-group" *ngFor="let field of fields; let i=index">
+                        <div class=" side-menu-group-title" (click)="goToProfession(field.name)" (click)="click_close()">
+                            <a class="side-menu-item">
+                                <span class="side-menu-item-label">{{field.name}}</span></a>
+                        </div>
+                    </li>
+    
+                    <li class="side-menu-group">
+                        <div class="side-menu-group-title" (click)="contact_us()" (click)="click_close()">
+                            <a class="side-menu-item">
+                                <span class="side-menu-item-label ">CONTACT US</span></a>
+                        </div>
+                    </li>
+                </ul>
+    
+                <div class="collapsed-menu" (click)="click_status()">
+                    <span class={{menu_icon_class}}>
+          <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </span>
+    
+                    <span class="menu-text">{{menu_status}}</span>
+    
+                    <div class="menu-content">
+                        <ul>
+                            <li *ngFor="let field of fields; let i=index" (click)="goToProfession(field.name)">{{field.name}}</li>
+                            <li (click)="contact_us()">contact us</li>
+                        </ul>
                     </div>
-                   
+                </div>
+            </div>
+        </div>
+    
+        <div class="flex-items sign-in-div">
+            <div class="sign-in">
+                <span class="sign-in-text" (click)="dispFunc()" *ngIf="!is_signed_in" (click)="click_close()">Sign In</span>
+                <span class="sign-in-text" (click)="signout()" *ngIf="is_signed_in" (click)="on_submit_form=true" (click)="click_close()">Sign Out</span>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+    
+    <div class="back_blur" *ngIf="click_contact">
+        <div class="contact_us_form">
+            <div class="new-request-section">
+                <h3 class="page-header">
+                             Contact Us
+                          </h3>
+    
+                <form id="contact_form" class="form" (ngSubmit)="on_contact_us(f)" #f="ngForm">
+                    <div class="requestor_name" style="margin-bottom:20px">
+                        <label for="requestor_name">Your name</label>
+                        <input type="text" value="" id="requestor_name" name="requestor_name" ngModel required="required">
+                    </div>
+    
+                    <div class="email_address_div" style="margin-bottom:20px">
+                        <label for="requestor_email_address">Your email address</label>
+                        <input type="email" id="requestor_email_address" value="" ngModel name="email" required email #email="ngModel">
+                        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+                    </div>
+                    <div class="contact_number_div" style="margin-bottom:20px">
+                        <label for="requestor_contact_number">Your Contact number</label>
+                        <input type="number" name="number" id="requestor_contact_number" value="" ngModel required number #number="ngModel">
+                        <span class="help-block" *ngIf="!number.valid && number.touched">Please enter a valid mobile number!</span>
+                    </div>
+    
+                    <div class="question_about_div" style="margin-bottom:20px">
+                        <label for="requestor_question">question about...</label>
+                        <select id="requestor_question_about" name="requestor_question_about" ngModel required="required">
+                            <option value="career" selected="selected">career</option>
+                            <option value="counselling"> counselling</option>
+                            <option value="intern">intern</option>
+                            <option value="job">job</option>
+                            <option value="other">other</option>
+                        </select>
+                    </div>
+    
+                    <div class="form-field text  required  request_description_div">
+                        <p>Please enter the details of your request. A member of our support staff will respond as soon as possible.</p>
+                    </div>
+                    <div class="contact_us_submit">
+                        <button type="submit" class="commit" id="commit" (click)="on_submit_form=true" [disabled]="!f.valid">submit</button>
+                    </div>
+    
                 </form>
-                <div class="close" (click)="click_contact=false" >
+                <div class="close" (click)="click_contact=false">
                     <span></span>
                     <span></span>
-                  </div>
-                 </div>  
-                                             
-</div>
-</div>
-<div class="alert_background_blur" *ngIf="on_submit_form"></div>
-<div class="alert_background" *ngIf="on_submit_form">
-<div class="alert">
-    <div class="alert_dialouge">
-    <p>{{msg}}</p>
+                </div>
+            </div>
+    
+        </div>
     </div>
-    <div class="alert_buttton">
-    <button id="commit" (click)="on_submit_form=false">close</button>
+    <div class="alert_background_blur" *ngIf="on_submit_form"></div>
+    <div class="alert_background" *ngIf="on_submit_form">
+        <div class="alert">
+            <div class="alert_dialouge">
+                <p>{{msg}}</p>
+            </div>
+            <div class="alert_buttton">
+                <button id="commit" (click)="on_submit_form=false">close</button>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-
-<div class="contact_button_div" *ngIf="!click_contact">
+    
+    <div class="contact_button_div" *ngIf="!click_contact">
         <button id="contact_button" (click)="contact_us()">contact us</button>
-      </div>
-
+    </div>

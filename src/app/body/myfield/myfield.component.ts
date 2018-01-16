@@ -17,8 +17,11 @@ export class MyfieldComponent implements OnInit {
     };
     this.route.params.subscribe(
       (params:Params)=>{
-      this.route.params['name']     
+      this.route.params['name']   
+      //console.log(name);  
       }
+
     );
+    
   }
 }

@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pwa": "ng build --prod --aot && sw-precache --root=public --config=precache-config.js" 
+    "pwa": "ng build --prod --aot && sw-precache --root=public --config=precache-config.js"
   },
   "private": true,
   "dependencies": {
