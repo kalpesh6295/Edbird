@@ -22,7 +22,7 @@ import { StoryItemComponent } from './body/myfield/stories/story-item/story-item
 import { AuthorsComponent } from './body/myfield/authors/authors.component';
 import { InsideStoryComponent } from './body/myfield/stories/story-item/inside-story/inside-story.component';
 import { HttpModule } from '@angular/http';
-import {HashLocationStrategy, Location,PathLocationStrategy, LocationStrategy} from '@angular/common';
+import { Location,PathLocationStrategy, LocationStrategy} from '@angular/common';
 import * as firebase from 'firebase';
 // New imports to update based on AngularFire2 version 4
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -78,13 +78,13 @@ const appRoutes:Routes=[
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes, {useHash: true}),
+    RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [IndexService,DataService,HeaderService,InsightService, AppService,Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [IndexService,DataService,HeaderService,InsightService, AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

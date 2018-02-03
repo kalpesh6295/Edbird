@@ -3,10 +3,8 @@ import { InsightService } from './insights.service';
 import { Insight } from './insights.model';
 import { insight } from '../../../model/Field';
 import { DataService } from '../../../service/data.service';
-import { ActivatedRoute } from '@angular/router/src/router_state';
 import { Router } from '@angular/router';
-
-
+import { Meta, Title } from "@angular/platform-browser";
 @Component({
   selector: 'app-insights',
   templateUrl: './insights.component.html',
@@ -21,37 +19,25 @@ export class InsightsComponent implements OnInit{
   insights: insight[];
   
   constructor(
-    //private categoryService:IndexService, 
     private dataservice: DataService,
-    private router: Router
-  //  private route : ActivatedRoute
+    private router: Router,
+    meta: Meta, title: Title        
+
+    
+
   ) { this.router.events.subscribe(() => {
-    // Do whatever in here
     this.fulllink=decodeURIComponent(this.router.url);
     this.alength=this.fulllink.length;
     this.profession=this.fulllink.substring(12,this.alength-9);
-  //console.log(this.profession);
-     this.dataservice.getinsights(this.profession).subscribe(insights =>{
-     
-      this.insights=insights;
-      
+    
+    this.dataservice.getinsights(this.profession).subscribe(insights =>{
+      this.insights=insights; 
     });
 });
-    
+   title.setTitle(decodeURIComponent(this.router.url).substring(12,decodeURIComponent(this.router.url).length-9)) ;
   }
 
   ngOnInit() {
-   // this.categories=this.categoryService.categories;
-  // this.fieldname =this.route.snapshot.params[':name'];
-  this.fulllink=decodeURIComponent(this.router.url);
-  this.alength=this.fulllink.length;
-  this.profession=this.fulllink.substring(12,this.alength-9);
-//console.log(this.profession);
-   this.dataservice.getinsights(this.profession).subscribe(insights =>{
-   
-    this.insights=insights;
-    
-  });
     
   }
  

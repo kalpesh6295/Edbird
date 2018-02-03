@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { insight } from '../../../../model/Field';
-import * as $ from 'jquery';
+
 
 
 @Component({
@@ -9,10 +9,11 @@ import * as $ from 'jquery';
   styleUrls: ['./insight-item.component.css']
 })
 export class InsightItemComponent implements OnInit {
-  // insights:Insight[]=[];
+
   @Input() insightItem:insight;
-  //content:string = $(this.insightItem.content_detail);
+  constructor(){}
   ngOnInit() {
-   // console.log(this.content);
+   
+  
   }
 }

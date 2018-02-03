@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Meta, Title } from "@angular/platform-browser";
 import { IndexModel } from './index.model';
 import { IndexService } from './index.service';
 import {DataService} from '../../../app/service/data.service';
@@ -16,9 +16,10 @@ export class IndexComponent implements OnInit {
   
     constructor(
       //private categoryService:IndexService, 
-      private dataservice: DataService
+      private dataservice: DataService,
+      meta: Meta, title: Title
     ) { 
-      
+      title.setTitle('Edbird');
     }
   
     ngOnInit() {
