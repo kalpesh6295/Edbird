@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IndexModel } from "../index.model";
 import { Output } from '@angular/core/src/metadata/directives';
 import { Router } from '@angular/router';
-
+import {field} from '../../../model/Field'
 
 @Component({
   selector: 'app-category-item',
@@ -10,9 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./categories-item.component.css']
 })
 export class CategoriesItemComponent implements OnInit {
-  @Input() category:IndexModel;
+  @Input() category:field;
   @Input() categoryIndex:number;
-  field :string;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -20,7 +19,5 @@ export class CategoriesItemComponent implements OnInit {
   profession:string;
   output(){
    this.profession=this.category.name;
-    //console.log(this.profession);
-   // console.log(this.router.url);
   }
 }

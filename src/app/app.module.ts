@@ -10,12 +10,9 @@ import { IndexComponent } from './body/index/index.component';
 import { MyfieldComponent } from './body/myfield/myfield.component';
 import { InsightsComponent } from './body/myfield/insights/insights.component';
 import { StoriesComponent } from './body/myfield/stories/stories.component';
-import { IndexService } from './body/index/index.service';
 import{AppService} from './app.service';
 import{HeaderService} from './header/header.service';
-import { SigninComponent } from './body/signin/signin.component';
 import { InsightItemComponent } from './body/myfield/insights/insight-item/insight-item.component';
-import { InsightService } from './body/myfield/insights/insights.service';
 import { CategoriesItemComponent } from './body/index/categories-item/categories-item.component';
 import { InsideinsightComponent } from './body/myfield/insights/insight-item/insideinsight/insideinsight.component';
 import { StoryItemComponent } from './body/myfield/stories/story-item/story-item.component';
@@ -67,7 +64,6 @@ const appRoutes:Routes=[
     MyfieldComponent,
     InsightsComponent,
     StoriesComponent,
-    SigninComponent,
     InsightItemComponent,
     InsideinsightComponent,
     StoryItemComponent,
@@ -84,7 +80,7 @@ const appRoutes:Routes=[
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [IndexService,DataService,HeaderService,InsightService, AppService],
+  providers: [DataService,HeaderService, AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
