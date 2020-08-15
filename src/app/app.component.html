@@ -1,3 +1,4 @@
+<div [ngClass]="{'landing_show': landing==false, 'landing_hide': landing==true}">
 <!-- sign in form-->
 <div class="background-blur" *ngIf="display"></div>
 <div class="modal-container" [ngClass]="{'show': display==true,'hide':display==false}">
@@ -24,9 +25,6 @@
                     </div>
                     <button class="btn sign-in-btn" id="SignIn" type="submit" [disabled]="!f.valid">Sign in</button>
 
-
-
-
                     <div class="social-login-separator">
                         <p class="title">OR</p>
                     </div>
@@ -37,7 +35,6 @@
                 </p>
 
             </div>
-
 
             <div class="sign-up-form-container" *ngIf="on_sign_in">
                 <form class="signup_form" (ngSubmit)="onsignup(f)" #f="ngForm">
@@ -70,7 +67,6 @@
             </div>
         </div>
 
-
         <div class="close" (click)="display=false" (click)="on_sign_in=false">
             <span></span>
             <span></span>
@@ -93,7 +89,19 @@
 
 <!-- sign in form end here-->
 <div class="main" [ngClass]="{'main-overflow': display==true}">
-    <app-header [is_signed_in]="user_signed_in" class="app_header" (dispEvent)="SignInPopUp($event)"></app-header>
+    <app-header [is_signed_in]="user_signed_in" [click_contact]="contact_us_click" class="app_header" (dispEvent)="SignInPopUp($event)"></app-header>
     <app-body></app-body>
     <app-footer></app-footer>
+</div>
+
+</div>
+<div class="landing_page"  [ngClass]="{'landing_show': landing==true, 'landing_hide': landing==false}">
+    <div  class="landing_display">
+     
+    <!-- <img src="../assets/images/designing.jpg" alt="landing image" class=" img-responsive"> -->
+    <div  class="landing_option img-responsive">
+            <div class="option" (click)="landing=false">Discover your passion</div>
+            <div class="option" (click)="contact_us_click=true" (click)="landing=false">Contact EdBird to know more</div>
+        </div>       
+    </div>
 </div>

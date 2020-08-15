@@ -1,10 +1,30 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {
+  Component, OnInit, Output, EventEmitter, Input,HostListener,NgModule, 
+}
+from '@angular/core';
+import {
+  NgForm
+}
+from '@angular/forms';
 import * as firebase from 'firebase';
-import { Observable } from 'rxjs/Observable';
-import {AppService} from './app.service';
-import {DataService} from '../app/service/data.service'
-import {field} from '../app/model/field' 
+import {
+  Observable
+}
+from 'rxjs/Observable';
+import {
+  AppService
+}
+from './app.service';
+import {
+  DataService
+}
+from '../app/service/data.service';
+import {
+  field
+}
+from '../app/model/field';
+import {BrowserModule } from "@angular/platform-browser";
+
 @Component({
   selector: 'app-root',
 
@@ -12,26 +32,34 @@ import {field} from '../app/model/field'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
   title = 'app';
   display = false;
   user_signed_in = false;
   on_sign_in = false;
   on_submit_form = false;
+  contact_us_click: boolean;
+  landing = true;
   msg;
+  scroll = (): void => {
+      this.landing=false;
+      console.log("working");
+    //handle your scroll here
+    //notice the 'odd' function assignment to a class field
+    //this is used to be able to remove the event listener
+  };
+
   // ----------data from firebase------------------//
   ngOnInit() {
-
+    //console.log("check");
+    window.addEventListener('scroll', this.scroll, true); //third parameter
   }
-
-
-
-
 
   //-----------ends here----------------------------//
   SignInPopUp($event) {
       this.display = $event;
+     
   }
-
 
   constructor(private appservice: AppService, private dataservice: DataService) {}
   onsignup(form: NgForm) {
@@ -98,5 +126,8 @@ export class AppComponent implements OnInit {
       this.display = false;
       this.user_signed_in = true;
   }
-
+  getUrl()
+  {
+    return "url('../assets/images/designing.jpg')";
+  }
 }

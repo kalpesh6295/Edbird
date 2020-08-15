@@ -24,7 +24,8 @@ export interface content{
 }
 
 export interface author {
-    author_name?: string;
-    author_image?: string;
-    author_detail?: string;
+    name?: string;
+    profession?: string;
+    facebook?: string;
+    linkedin?: string;
 }

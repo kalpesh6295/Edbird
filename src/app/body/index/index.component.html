@@ -6,7 +6,7 @@
     <app-category-item 
     [category]="field"
     [categoryIndex]="i"
-    [routerLink]="['/categories',+field.name,'Insights']"
+    [routerLink]="['/categories',field.name|transform,'Insights']"
      ></app-category-item>
 </div>
 </div>
