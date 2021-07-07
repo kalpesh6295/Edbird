@@ -1,0 +1,57 @@
+.authorcontainer{
+    background: url("../../../../assets/images/tattooBaba.jpg");
+    background-size: cover;
+    /* height: 75vh;; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.authorContent{
+background-color: #2b2929ea;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+.authorContent .row{
+    display: flex;
+}
+.imageAuthor , .aboutAuthor{
+    /* width: 50%; */
+    color: rgb(189, 179, 179);
+}
+h3{
+    border-bottom: 1px solid white;
+
+}
+p{
+    text-align: justify;
+}
+.imageAuth{text-align: center;}
+.tags{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .tags img{
+        width: 20px;
+        height: auto;
+    }
+    .tagstags{
+        padding: 2px;
+        margin: 0;
+    }
+.stories{
+    border-top: 1px solid whitesmoke ;
+}
+    .stories .col-lg-12{
+        height: 200px;
+        width: 200px;
+        color :#f5f5f5bd;
+    }
+@media only screen and (max-width:1000px) {
+    .imageAuthor>img{
+        width: 50%;
+        }
+        .imageAuthor{
+            text-align: center;
+        }
+}

@@ -1,36 +1,61 @@
-import { Component, OnInit, DoCheck ,OnDestroy} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { InsightService } from './insights.service';
+import { Insight } from './insights.model';
 import { insight } from '../../../model/Field';
 import { DataService } from '../../../service/data.service';
+import { ActivatedRoute } from '@angular/router/src/router_state';
 import { Router } from '@angular/router';
-import { Meta, Title } from "@angular/platform-browser";
+
+
 @Component({
   selector: 'app-insights',
   templateUrl: './insights.component.html',
-  styleUrls: ['./insights.component.css']
-  
+  styleUrls: ['./insights.component.css'],
+  providers: [InsightService]
 })
-export class InsightsComponent implements OnInit, OnDestroy {
-  profession: string;
+export class InsightsComponent implements OnInit{
+  fieldname: string;
+  alength:number;
+  profession:string;
+  fulllink:string;
   insights: insight[];
-  link;
+  
   constructor(
-      private dataservice: DataService,
-      private router: Router,
-      meta: Meta, title: Title
-  ) {
-      this.link = this.router.events.subscribe(() => {
-          this.profession = decodeURIComponent(this.router.url).substring(12, decodeURIComponent(this.router.url).length - 9);
-          title.setTitle(this.profession);
-          this.dataservice.getinsights(this.profession).subscribe(insights => {
-              this.insights = insights;
-          });
-      });
+    //private categoryService:IndexService, 
+    private dataservice: DataService,
+    private router: Router
+  //  private route : ActivatedRoute
+  ) { this.router.events.subscribe(() => {
+    // Do whatever in here
+    this.fulllink=decodeURIComponent(this.router.url);
+    this.alength=this.fulllink.length;
+    this.profession=this.fulllink.substring(12,this.alength-9);
+    this.profession=this.profession.replace(/_/g,' ');if(this.fulllink.substring(this.alength-8,this.alength)=="Insights"){
+      this.dataservice.getinsights(this.profession).subscribe(insights =>{
+      
+       this.insights=insights;
+       console.log(insights);
+     });
+   }
+});
+    
   }
 
   ngOnInit() {
-
+   // this.categories=this.categoryService.categories;
+  // this.fieldname =this.route.snapshot.params[':name'];
+  this.fulllink=decodeURIComponent(this.router.url);
+  this.alength=this.fulllink.length;
+  this.profession=this.fulllink.substring(12,this.alength-9);
+  this.profession=this.profession.replace(/_/g,' ');
+if(this.fulllink.substring(this.alength-8,this.alength)=="Insights"){
+   this.dataservice.getinsights(this.profession).subscribe(insights =>{
+   
+    this.insights=insights;
+    console.log(insights);
+  });
+}
+    
   }
-  ngOnDestroy(): void {
-      this.link.unsubscribe();
-  }
+ 
 }

@@ -1,5 +1,11 @@
 .container{
     width: 95%;
+    background: url("../../../../../../assets/images/storypageback.jpg");
+    /* background-size: cover; */
+}
+.container div{
+    background-color:rgba(42, 40, 40, 0.97);
+    color: rgba(219, 216, 216, 0.8);
 }
 *{
     font-family: Flama, Helvetica, sans-serif;
